@@ -1,0 +1,214 @@
+{
+ "base_gap_mi": 1495,
+ "base_gap_as_of": "end-2025",
+ "base_gap_source": "NCTA 2025 Annual Report (1,495 on-road miles of 4,860 total; 3,365 off-road)",
+ "total_route_mi": 4860,
+ "offroad_mi": 3365,
+ "alt_gap_mi": 1418,
+ "alt_gap_source": "NCTA FY2027 state fact sheets (updated Feb 2026), 'miles left to build' \u2014 a different vintage/definition; reported, not reconciled",
+ "yearly": [
+  {
+   "year": 2015,
+   "miles_built": 23,
+   "roadwalk_eliminated_mi": null,
+   "volunteers": 1095,
+   "volunteer_hours": 66166,
+   "source": "NCTA 2015 Annual Report"
+  },
+  {
+   "year": 2016,
+   "miles_built": 23,
+   "roadwalk_eliminated_mi": null,
+   "volunteers": 1343,
+   "volunteer_hours": 69708,
+   "source": "NCTA 2016 Trail Progress Report"
+  },
+  {
+   "year": 2017,
+   "miles_built": null,
+   "roadwalk_eliminated_mi": null,
+   "volunteers": null,
+   "volunteer_hours": null,
+   "source": "not found \u2014 no NCTA annual/progress report or Form 990 figure located"
+  },
+  {
+   "year": 2018,
+   "miles_built": 51,
+   "roadwalk_eliminated_mi": null,
+   "volunteers": 991,
+   "volunteer_hours": 66834,
+   "source": "NCTA 2018 Annual Report"
+  },
+  {
+   "year": 2019,
+   "miles_built": 71.4,
+   "roadwalk_eliminated_mi": null,
+   "volunteers": 1058,
+   "volunteer_hours": 83300,
+   "source": "NCTA 2019 Trail Progress Report"
+  },
+  {
+   "year": 2020,
+   "miles_built": 51,
+   "roadwalk_eliminated_mi": 20,
+   "volunteers": 988,
+   "volunteer_hours": 91086,
+   "source": "NCTA 2020 Trail Progress Report"
+  },
+  {
+   "year": 2021,
+   "miles_built": 44.75,
+   "roadwalk_eliminated_mi": 45.13,
+   "volunteers": 542,
+   "volunteer_hours": 54236,
+   "source": "North Star, Winter 2022"
+  },
+  {
+   "year": 2022,
+   "miles_built": 87,
+   "roadwalk_eliminated_mi": 44,
+   "volunteers": 743,
+   "volunteer_hours": 64921,
+   "source": "North Star, Winter 2023 (2022 Overview)"
+  },
+  {
+   "year": 2023,
+   "miles_built": 59,
+   "roadwalk_eliminated_mi": 58,
+   "volunteers": 875,
+   "volunteer_hours": 65683,
+   "source": "IRS Form 990 (2023); North Star, Winter 2024"
+  },
+  {
+   "year": 2024,
+   "miles_built": 64,
+   "roadwalk_eliminated_mi": 42,
+   "volunteers": 1217,
+   "volunteer_hours": 64253,
+   "source": "North Star, Winter 2025 (2024 Snapshot)"
+  },
+  {
+   "year": 2025,
+   "miles_built": 47,
+   "roadwalk_eliminated_mi": 25,
+   "volunteers": 1267,
+   "volunteer_hours": 80405,
+   "source": "NCTA 2025 Annual Report; IRS Form 990 (2025). Volunteer hours differ between the two sources (Annual Report 80,405 incl. advocacy/travel hours; Form 990 73,479); the Annual Report figure is used here."
+  }
+ ],
+ "rates": {
+  "mean_built_per_year_2015_2025": 52.1,
+  "mean_built_note": "10 known years (excl. 2017); 521.15 miles total",
+  "mean_built_2020_2025": 58.8,
+  "gross_closure_per_year_2020_2025": 39.0,
+  "gross_closure_note": "234.13 roadwalk miles reported eliminated over 6 years (2020-2025)",
+  "net_gis_closure_per_year_2019_2025": 18.5,
+  "net_gis_note": "GIS on-road miles fell 1,606.1 (end 2019) to 1,495 (end 2025) = 111 miles in 6 years",
+  "closure_ratio": 0.66,
+  "closure_ratio_note": "Only ~66% of miles built 2020-2025 closed road gap; the rest were reroutes/reconstruction of existing off-road trail"
+ },
+ "scenarios": [
+  {
+   "id": "A",
+   "rate_mi_per_year": 39.0,
+   "assumption": "Mean roadwalk eliminated, 2020-2025; assumes no acceleration, no slowdown",
+   "years": 38,
+   "finish_year": 2064
+  },
+  {
+   "id": "B",
+   "rate_mi_per_year": 18.5,
+   "assumption": "Mean decline in GIS on-road miles, 2019-2025 (includes route growth/remeasurement drag)",
+   "years": 81,
+   "finish_year": 2106
+  },
+  {
+   "id": "C",
+   "rate_mi_per_year": 78,
+   "assumption": "Scenario A doubled (funding + volunteers + land deals all scale)",
+   "years": 19,
+   "finish_year": 2045
+  },
+  {
+   "id": "D",
+   "rate_mi_per_year": 37,
+   "assumption": "Scenario B doubled",
+   "years": 40,
+   "finish_year": 2066
+  },
+  {
+   "id": "E",
+   "rate_mi_per_year": 13.0,
+   "assumption": "On-road 1,625.4 (2015) to 1,495 (2025); note 2015 figure is an older estimate vintage",
+   "years": 115,
+   "finish_year": 2141
+  },
+  {
+   "id": "F",
+   "rate_mi_per_year": 33,
+   "assumption": "50 mi built/yr x 66% closure ratio (NCTA 2020-23 target pace)",
+   "years": 45,
+   "finish_year": 2071
+  },
+  {
+   "id": "G",
+   "rate_mi_per_year": 56,
+   "assumption": "85 mi built/yr ('1,700 miles over two decades') x 66% closure ratio (Ketchmark 2022 aspiration)",
+   "years": 27,
+   "finish_year": 2053
+  },
+  {
+   "id": "H",
+   "rate_mi_per_year": 52,
+   "assumption": "Mean miles BUILT, wrongly treated as gap closed",
+   "years": 29,
+   "finish_year": 2055,
+   "show_only_to_avoid": true,
+   "note": "The conflated number: it overstates progress by roughly a third to a half. Shown only so the viewer can explain why it is wrong."
+  }
+ ],
+ "reading": "Central range A-B: ~40-80 years at the recent pace. Five years would require ~300 mi/year of net closure (~7.7x the gross rate); 200 years would require ~7.5 mi/year net, well below any recent year. Closer to 20 years than to 200 only under a doubling.",
+ "caveats": [
+  "Miles BUILT, miles CERTIFIED, and miles of road gap CLOSED are three different numbers. Only net gap closure moves the finish date; the build rate (~52/yr) overstates progress by roughly a third to a half.",
+  "Gross closure (39.0/yr) measures project output; net GIS closure (18.5/yr) measures progress toward completion and is the stricter figure \u2014 the gap is route-length growth and GIS re-measurement adding road miles even as old ones close.",
+  "Scenario H (29 years) is the number you get by conflating built miles with closed miles; it is shown only to avoid.",
+  "2017 miles built could not be verified (no NCTA annual/progress report or Form 990 figure located; ProPublica Nonprofit Explorer blocked in the research environment).",
+  "Scenario E is the most pessimistic defensible trend but rests on a 2015 on-road figure of a different vintage.",
+  "Finish years are end-2025 plus the years-to-finish, rounded."
+ ],
+ "epochs": [
+  {
+   "epoch": "1982->2005",
+   "net_mi": 1895.6,
+   "gross_new_mi": 2435.8,
+   "gross_gone_mi": 540.2,
+   "tolerance_m": 200,
+   "note": "Net is the robust figure (stable 1,829-1,924 mi across 100/200/400 m tolerances); gross new/gone are upper bounds mixing genuine construction with re-routes, re-digitization, and coverage change. 1982 baseline is thin (999.7 mi of 'existing' trail digitized); ND existing line in 1982 is only 1.4 mi; MN 113.9 mi."
+  },
+  {
+   "epoch": "2005->2026",
+   "net_mi": 1906.8,
+   "gross_new_mi": 2694.4,
+   "gross_gone_mi": 787.6,
+   "tolerance_m": 100,
+   "note": "Net stable 1,887-1,923 mi across 50/100/200 m. MINNESOTA TRAP: the 2005 dataset holds only 158.0 mi in MN (no Superior Hiking Trail), so most of MN's 780.7 'new' mi is coverage change, not construction. Clean additions: Vermont 70.6 mi (2019 extension, zero 'gone') and North Dakota 274.9 mi new. Of the 2,694.4 gross new mi, 1,599.1 are off-road and 1,095.3 on-road. The independent build-rate record (~52 mi/yr built 2015-2025) implies roughly 1,100 mi of genuine construction over 2005-2026, about 40% of the gross 'new' figure."
+  },
+  {
+   "epoch": "2016",
+   "status": "uncomputable",
+   "note": "The 2016 NY/PA centerline (NPS IRMA Ref 2229138, Rowbotham 2016) carries only a metadata PDF with no retrievable geometry. No dated snapshot exists between May 2005 and November 2026, so the 2005->2026 epoch cannot be split at 2016 except via OSM, and only for Michigan."
+  },
+  {
+   "epoch": "2020->2026 (OSM Michigan only)",
+   "net_mi": 262.7,
+   "gross_new_mi": 328.2,
+   "gross_gone_mi": 65.5,
+   "tolerance_m": 100,
+   "note": "OpenStreetMap relation 11140515. MAPPING dates, not build dates: a way appearing after 2020 may have been built earlier and only mapped later. The 2020 line is incomplete mapping (900.2 mi vs ~1,180 mi of route in MI). Net stable 262.6-262.7 mi across tolerances."
+  }
+ ],
+ "sources": [
+  "research_notes/nct-build-rate-20261121-2212/report.md (build rate, scenarios A-H, yearly table)",
+  "nct-completeness-viewer/epoch-methods.md + epoch-mileage-table.csv (epoch nets)"
+ ]
+}

@@ -1,0 +1,446 @@
+[
+ {
+  "code": "ADK",
+  "name": "Adirondack Mountain Club",
+  "natural_tread_mi": 75.95,
+  "urban_sidewalk_mi": 5.99,
+  "road_mi": 104.35,
+  "total_mi": 186.29,
+  "pct_natural_tread": 40.8,
+  "unmapped": false
+ },
+ {
+  "code": "ADK-ON",
+  "name": "?? UNMAPPED CODE ??",
+  "natural_tread_mi": 33.09,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 5.36,
+  "total_mi": 38.45,
+  "pct_natural_tread": 86.1,
+  "unmapped": true
+ },
+ {
+  "code": "ANF",
+  "name": "Allegheny National Forest",
+  "natural_tread_mi": 89.56,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 2.9,
+  "total_mi": 92.46,
+  "pct_natural_tread": 96.9,
+  "unmapped": false
+ },
+ {
+  "code": "ARW",
+  "name": "Arrowhead",
+  "natural_tread_mi": 136.12,
+  "urban_sidewalk_mi": 8.93,
+  "road_mi": 33.61,
+  "total_mi": 178.66,
+  "pct_natural_tread": 76.2,
+  "unmapped": false
+ },
+ {
+  "code": "BAW",
+  "name": "Chief Baw Beese",
+  "natural_tread_mi": 18.36,
+  "urban_sidewalk_mi": 4.15,
+  "road_mi": 29.41,
+  "total_mi": 51.92,
+  "pct_natural_tread": 35.4,
+  "unmapped": false
+ },
+ {
+  "code": "BRT",
+  "name": "Border Route Trail",
+  "natural_tread_mi": 64.88,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 0.0,
+  "total_mi": 64.88,
+  "pct_natural_tread": 100.0,
+  "unmapped": false
+ },
+ {
+  "code": "BSC",
+  "name": "Brule-St. Croix",
+  "natural_tread_mi": 56.79,
+  "urban_sidewalk_mi": 1.09,
+  "road_mi": 47.78,
+  "total_mi": 105.66,
+  "pct_natural_tread": 53.8,
+  "unmapped": false
+ },
+ {
+  "code": "BTA",
+  "name": "Buckeye Trail Association",
+  "natural_tread_mi": 464.2,
+  "urban_sidewalk_mi": 28.71,
+  "road_mi": 439.75,
+  "total_mi": 932.66,
+  "pct_natural_tread": 49.8,
+  "unmapped": false
+ },
+ {
+  "code": "BUT",
+  "name": "Butler County",
+  "natural_tread_mi": 32.2,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 16.23,
+  "total_mi": 48.42,
+  "pct_natural_tread": 66.5,
+  "unmapped": false
+ },
+ {
+  "code": "CHE",
+  "name": "Chequamegon",
+  "natural_tread_mi": 65.38,
+  "urban_sidewalk_mi": 0.43,
+  "road_mi": 1.93,
+  "total_mi": 67.74,
+  "pct_natural_tread": 96.5,
+  "unmapped": false
+ },
+ {
+  "code": "CLA",
+  "name": "Clarion County",
+  "natural_tread_mi": 84.04,
+  "urban_sidewalk_mi": 2.02,
+  "road_mi": 9.68,
+  "total_mi": 95.74,
+  "pct_natural_tread": 87.8,
+  "unmapped": false
+ },
+ {
+  "code": "CND",
+  "name": "Chief Noonday",
+  "natural_tread_mi": 53.19,
+  "urban_sidewalk_mi": 7.31,
+  "road_mi": 57.35,
+  "total_mi": 117.86,
+  "pct_natural_tread": 45.1,
+  "unmapped": false
+ },
+ {
+  "code": "CNY",
+  "name": "Central New York",
+  "natural_tread_mi": 60.16,
+  "urban_sidewalk_mi": 9.06,
+  "road_mi": 17.91,
+  "total_mi": 87.14,
+  "pct_natural_tread": 69.0,
+  "unmapped": false
+ },
+ {
+  "code": "Central NY",
+  "name": "Central New York",
+  "natural_tread_mi": 1.02,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 1.45,
+  "total_mi": 2.46,
+  "pct_natural_tread": 41.3,
+  "unmapped": false,
+  "variant_of": "CNY",
+  "note": "Variant spelling of CNY (Central New York)"
+ },
+ {
+  "code": "DPC",
+  "name": "Dakota Prairie",
+  "natural_tread_mi": 58.42,
+  "urban_sidewalk_mi": 1.75,
+  "road_mi": 23.57,
+  "total_mi": 83.73,
+  "pct_natural_tread": 69.8,
+  "unmapped": false
+ },
+ {
+  "code": "ELY",
+  "name": "Ely Northwoods",
+  "natural_tread_mi": 15.53,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 4.29,
+  "total_mi": 19.83,
+  "pct_natural_tread": 78.4,
+  "unmapped": false
+ },
+ {
+  "code": "FLTC",
+  "name": "Finger Lakes Trail Conference",
+  "natural_tread_mi": 296.28,
+  "urban_sidewalk_mi": 5.24,
+  "road_mi": 89.11,
+  "total_mi": 390.63,
+  "pct_natural_tread": 75.8,
+  "unmapped": false
+ },
+ {
+  "code": "FLY",
+  "name": "Central Flyway",
+  "natural_tread_mi": 116.04,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 23.6,
+  "total_mi": 139.64,
+  "pct_natural_tread": 83.1,
+  "unmapped": false
+ },
+ {
+  "code": "GMC",
+  "name": "Green Mountain Club",
+  "natural_tread_mi": 35.5,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 1.94,
+  "total_mi": 37.44,
+  "pct_natural_tread": 94.8,
+  "unmapped": false
+ },
+ {
+  "code": "GTC",
+  "name": "Grand Traverse",
+  "natural_tread_mi": 77.65,
+  "urban_sidewalk_mi": 0.96,
+  "road_mi": 26.5,
+  "total_mi": 105.11,
+  "pct_natural_tread": 73.9,
+  "unmapped": false
+ },
+ {
+  "code": "GTR",
+  "name": "?? UNMAPPED CODE ??",
+  "natural_tread_mi": 0.87,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 0.69,
+  "total_mi": 1.56,
+  "pct_natural_tread": 55.8,
+  "unmapped": true
+ },
+ {
+  "code": "HRB",
+  "name": "Harbor Springs",
+  "natural_tread_mi": 42.68,
+  "urban_sidewalk_mi": 0.54,
+  "road_mi": 6.09,
+  "total_mi": 49.31,
+  "pct_natural_tread": 86.6,
+  "unmapped": false
+ },
+ {
+  "code": "HSS",
+  "name": "Hiawatha Shore-to-Shore",
+  "natural_tread_mi": 121.67,
+  "urban_sidewalk_mi": 2.36,
+  "road_mi": 14.58,
+  "total_mi": 138.61,
+  "pct_natural_tread": 87.8,
+  "unmapped": false
+ },
+ {
+  "code": "HTG",
+  "name": "Heritage",
+  "natural_tread_mi": 27.06,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 14.89,
+  "total_mi": 41.95,
+  "pct_natural_tread": 64.5,
+  "unmapped": false
+ },
+ {
+  "code": "ITM",
+  "name": "Itasca Moraine",
+  "natural_tread_mi": 77.99,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 0.32,
+  "total_mi": 78.31,
+  "pct_natural_tread": 99.6,
+  "unmapped": false
+ },
+ {
+  "code": "J45",
+  "name": "Jordan Valley 45\u00b0",
+  "natural_tread_mi": 57.99,
+  "urban_sidewalk_mi": 0.41,
+  "road_mi": 21.27,
+  "total_mi": 79.67,
+  "pct_natural_tread": 72.8,
+  "unmapped": false
+ },
+ {
+  "code": "KEK",
+  "name": "Kekekabic Trail",
+  "natural_tread_mi": 39.03,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 14.92,
+  "total_mi": 53.95,
+  "pct_natural_tread": 72.3,
+  "unmapped": false
+ },
+ {
+  "code": "LLC",
+  "name": "Laurentian Lakes",
+  "natural_tread_mi": 62.2,
+  "urban_sidewalk_mi": 0.13,
+  "road_mi": 9.09,
+  "total_mi": 71.42,
+  "pct_natural_tread": 87.1,
+  "unmapped": false
+ },
+ {
+  "code": "LON",
+  "name": "?? UNMAPPED CODE ??",
+  "natural_tread_mi": 1.29,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 0.19,
+  "total_mi": 1.48,
+  "pct_natural_tread": 87.3,
+  "unmapped": true
+ },
+ {
+  "code": "MAC",
+  "name": "Marquette Area",
+  "natural_tread_mi": 87.94,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 22.34,
+  "total_mi": 110.28,
+  "pct_natural_tread": 79.7,
+  "unmapped": false
+ },
+ {
+  "code": "MALT",
+  "name": "Middlebury Area Land Trust",
+  "natural_tread_mi": 11.17,
+  "urban_sidewalk_mi": 4.41,
+  "road_mi": 4.83,
+  "total_mi": 20.41,
+  "pct_natural_tread": 54.7,
+  "unmapped": false
+ },
+ {
+  "code": "MWP",
+  "name": "Minnesota Waters and Prairie",
+  "natural_tread_mi": 21.5,
+  "urban_sidewalk_mi": 7.86,
+  "road_mi": 65.69,
+  "total_mi": 95.05,
+  "pct_natural_tread": 22.6,
+  "unmapped": false
+ },
+ {
+  "code": "NMK",
+  "name": "Ni-Miikanaake",
+  "natural_tread_mi": 70.71,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 10.94,
+  "total_mi": 81.65,
+  "pct_natural_tread": 86.6,
+  "unmapped": false
+ },
+ {
+  "code": "NORTA",
+  "name": "Northwestern Ohio Rail-to-Trails Assn",
+  "natural_tread_mi": 38.52,
+  "urban_sidewalk_mi": 1.94,
+  "road_mi": 3.69,
+  "total_mi": 44.14,
+  "pct_natural_tread": 87.3,
+  "unmapped": false
+ },
+ {
+  "code": "None",
+  "name": "?? UNMAPPED CODE ??",
+  "natural_tread_mi": 39.22,
+  "urban_sidewalk_mi": 3.77,
+  "road_mi": 87.93,
+  "total_mi": 130.92,
+  "pct_natural_tread": 30.0,
+  "unmapped": true,
+  "variant": "literal string 'None' in source data"
+ },
+ {
+  "code": "None",
+  "name": "?? UNMAPPED CODE ??",
+  "natural_tread_mi": 13.46,
+  "urban_sidewalk_mi": 2.15,
+  "road_mi": 6.22,
+  "total_mi": 21.84,
+  "pct_natural_tread": 61.6,
+  "unmapped": true,
+  "variant": "null chapter field in source data"
+ },
+ {
+  "code": "PWC",
+  "name": "Peter Wolfe",
+  "natural_tread_mi": 113.74,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 6.02,
+  "total_mi": 119.76,
+  "pct_natural_tread": 95.0,
+  "unmapped": false
+ },
+ {
+  "code": "SHTA",
+  "name": "Superior Hiking Trail Association",
+  "natural_tread_mi": 300.26,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 0.1,
+  "total_mi": 300.35,
+  "pct_natural_tread": 100.0,
+  "unmapped": false
+ },
+ {
+  "code": "SPW",
+  "name": "Spirit of the Woods",
+  "natural_tread_mi": 72.0,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 7.3,
+  "total_mi": 79.3,
+  "pct_natural_tread": 90.8,
+  "unmapped": false
+ },
+ {
+  "code": "SRV",
+  "name": "Sheyenne River Valley",
+  "natural_tread_mi": 63.43,
+  "urban_sidewalk_mi": 5.92,
+  "road_mi": 45.92,
+  "total_mi": 115.26,
+  "pct_natural_tread": 55.0,
+  "unmapped": false
+ },
+ {
+  "code": "SSC",
+  "name": "Superior Shoreline",
+  "natural_tread_mi": 95.2,
+  "urban_sidewalk_mi": 4.86,
+  "road_mi": 9.63,
+  "total_mi": 109.68,
+  "pct_natural_tread": 86.8,
+  "unmapped": false
+ },
+ {
+  "code": "STN",
+  "name": "Star of the North",
+  "natural_tread_mi": 9.97,
+  "urban_sidewalk_mi": 0.0,
+  "road_mi": 0.25,
+  "total_mi": 10.21,
+  "pct_natural_tread": 97.6,
+  "unmapped": false
+ },
+ {
+  "code": "WAM",
+  "name": "Wampum",
+  "natural_tread_mi": 43.11,
+  "urban_sidewalk_mi": 11.22,
+  "road_mi": 70.72,
+  "total_mi": 125.04,
+  "pct_natural_tread": 34.5,
+  "unmapped": false
+ },
+ {
+  "code": "WMI",
+  "name": "Western Michigan",
+  "natural_tread_mi": 89.77,
+  "urban_sidewalk_mi": 3.47,
+  "road_mi": 51.12,
+  "total_mi": 144.36,
+  "pct_natural_tread": 62.2,
+  "unmapped": false
+ }
+]

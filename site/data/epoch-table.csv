@@ -1,0 +1,22 @@
+epoch,state,new_mi,gone_mi,net_mi,tolerance_m,notes
+1982->2005,MI,938.8,142.0,796.8,200,primary tolerance; net range across 100/200/400 m: 1829.3-1923.7 mi total
+1982->2005,OH,426.7,109.3,317.4,200,
+1982->2005,NY,357.2,115.7,241.5,200,
+1982->2005,ND,239.4,0.7,238.7,200,1982 existing line in ND is only 1.4 mi; ND trail essentially appears in this epoch
+1982->2005,PA,180.0,43.5,136.5,200,
+1982->2005,WI,150.6,34.5,116.1,200,
+1982->2005,MN,136.7,94.5,42.2,200,1982 existing line in MN is only 113.9 mi
+1982->2005,UNKNOWN,6.5,0.0,6.5,200,fragment midpoint fell outside all Census state polygons
+1982->2005,TOTAL,2435.8,540.2,1895.6,200,gross new/gone are upper bounds (see methods); net is the robust figure
+2005->2026,MI,399.3,306.1,93.2,100,primary tolerance; net range across 50/100/200 m: 1887.1-1923.2 mi total
+2005->2026,OH,658.7,145.4,513.3,100,
+2005->2026,NY,343.7,116.2,227.5,100,
+2005->2026,ND,274.9,50.7,224.2,100,
+2005->2026,MN,780.7,65.6,715.1,100,NOT 781 mi built: the 2005 dataset holds only 158.0 mi in MN (no Superior Hiking Trail); most of this is coverage change
+2005->2026,PA,99.7,56.4,43.3,100,
+2005->2026,VT,70.6,0.0,70.6,100,entire Vermont segment (2019 extension); clean addition
+2005->2026,WI,65.1,47.2,17.9,100,
+2005->2026,UNKNOWN,1.7,0.2,1.5,100,fragment midpoint fell outside all Census state polygons
+2005->2026,TOTAL,2694.4,787.6,1906.8,100,of the 2694.4 new mi: 1599.1 off-road (NCT) + 1095.3 on-road; gross new/gone are upper bounds (see methods)
+2020->2026 (OSM MI only),MI,328.2,65.5,262.7,100,OpenStreetMap relation 11140515; MAPPING dates not build dates; 2020 line is incomplete mapping (900.2 mi vs ~1180 mi of route)
+2020->2026 (OSM MI only),TOTAL,328.2,65.5,262.7,100,net stable across 50/100/200 m: 262.6-262.7 mi

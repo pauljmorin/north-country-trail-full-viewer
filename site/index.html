@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>North Country Trail — How complete is it?</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1>North Country Trail &mdash; how complete is it?</h1>
+    <p class="subtitle">North Dakota to Vermont &mdash; for chapter leaders planning the work,
+      and for decision-makers weighing the case to finish it.
+      Not a hiker&rsquo;s map: no trip-planning features.</p>
+    <!-- Three kinds of miles, side by side, never lumped.
+         Neither urban sidewalk nor road miles count as built trail. -->
+    <div class="headline" role="group" aria-label="Trail mileage by kind">
+      <div class="mile total">
+        <span class="mile-num">4,871.24</span>
+        <span class="mile-unit">miles of existing route</span>
+      </div>
+      <div class="mile natural">
+        <span class="mile-num">3,335.09</span>
+        <span class="mile-unit">mi natural tread &mdash; built off-road trail &middot; 68.5%</span>
+      </div>
+      <div class="mile urban">
+        <span class="mile-num">124.68</span>
+        <span class="mile-unit">mi urban sidewalk &mdash; walkable, not trail &middot; 2.6%</span>
+      </div>
+      <div class="mile road">
+        <span class="mile-num">1,411.47</span>
+        <span class="mile-unit">mi road &mdash; trail not yet built &middot; 29.0%</span>
+      </div>
+    </div>
+    <p class="headline-note">&ldquo;Walkable&rdquo; is not &ldquo;complete&rdquo;:
+      urban sidewalk miles and road miles are never lumped together,
+      and neither counts as built trail. 1,536.15 miles &mdash; road plus
+      urban sidewalk &mdash; are not yet built tread.
+      <a href="case.html">The case for finishing it &rarr;</a></p>
+    <p class="headline-src">Measured from the NCTA official centerline,
+      pull of November 21, 2026; geodesic miles on WGS84.
+      The urban-sidewalk split is <em>derived</em> by the rule on the
+      <a href="data-sources.html">data sources</a> page, not published by NCTA.
+      Full tables below the map.</p>
+  </div>
+</header>
+
+<main>
+  <div id="map" aria-label="Map of the North Country Trail, coloured by whether each mile is natural tread, urban sidewalk, or road"></div>
+  <p id="load-status" class="status" role="status">Loading map data&hellip;</p>
+
+  <section id="tables" class="tables">
+    <h2>Mileage by state</h2>
+    <p>Geodesic miles on WGS84, from the NCTA centerline pull of
+      November 21, 2026. State assignment is by geometry (segments split
+      at Census 2024 state boundaries), not by NCTA&rsquo;s native state field.
+      Click a state on the map for the same rollup.</p>
+    <div class="table-wrap">
+    <table id="state-table">
+      <thead><tr>
+        <th scope="col">State</th>
+        <th scope="col" class="num">Natural tread</th>
+        <th scope="col" class="num">Urban sidewalk</th>
+        <th scope="col" class="num">Road</th>
+        <th scope="col" class="num">Total</th>
+        <th scope="col" class="num">% natural</th>
+      </tr></thead>
+      <tbody><!-- filled by app.js from the embedded rollup --></tbody>
+      <tfoot><tr>
+        <th scope="row">Trail total</th>
+        <td class="num">3,335.09</td><td class="num">124.68</td>
+        <td class="num">1,411.47</td><td class="num">4,871.24</td>
+        <td class="num">68.5%</td>
+      </tr></tfoot>
+    </table>
+    </div>
+    <p>Ohio is the least complete state by share (48.4% natural tread)
+      and carries the largest road-miles burden (513.73 mi); Michigan has
+      the most natural tread (902.89 mi).</p>
+
+    <h2>Mileage by chapter</h2>
+    <p id="chapter-source-note">Sorted by road miles, largest gap first.
+      Chapter attribution is NCTA&rsquo;s native <code>chapter</code> field;
+      there is no chapter-boundary geometry yet.</p>
+    <div class="table-wrap">
+    <table id="chapter-table">
+      <thead><tr>
+        <th scope="col">Chapter</th>
+        <th scope="col">Code</th>
+        <th scope="col" class="num">Natural tread</th>
+        <th scope="col" class="num">Urban sidewalk</th>
+        <th scope="col" class="num">Road</th>
+        <th scope="col" class="num">Total</th>
+        <th scope="col" class="num">% natural</th>
+      </tr></thead>
+      <tbody><!-- filled by app.js: chapters.json when present, else the embedded rollup --></tbody>
+      <tfoot><tr>
+        <th scope="row" colspan="2">Chapter total (all codes incl. unmapped)</th>
+        <td class="num">3,335.09</td><td class="num">124.68</td>
+        <td class="num">1,411.47</td><td class="num">4,871.24</td>
+        <td class="num">68.5%</td>
+      </tr></tfoot>
+    </table>
+    </div>
+
+    <h3>Unmapped chapter codes &mdash; flagged, not hidden</h3>
+    <p>194.25 miles carry a chapter code that maps to no chapter, or no
+      chapter at all. They are in the trail total and in the state table;
+      only their <em>chapter</em> attribution is missing. About 131 miles
+      carry the literal code &ldquo;None&rdquo; (mostly North Dakota);
+      ADK-ON is probably an Adirondack data-entry variant (Finger Lakes
+      Trail segments); GTR sits in a proposed-reroute area; LON is the
+      New Rockford Canal stretch. Star of the North (STN) shows only
+      10.21 tagged miles though the chapter maintains about 27 &mdash; its
+      remaining miles are probably tagged under other codes or
+      &ldquo;None&rdquo;.</p>
+    <div class="table-wrap">
+    <table id="unmapped-table">
+      <thead><tr>
+        <th scope="col">Code as published</th>
+        <th scope="col" class="num">Natural tread</th>
+        <th scope="col" class="num">Urban sidewalk</th>
+        <th scope="col" class="num">Road</th>
+        <th scope="col" class="num">Total</th>
+        <th scope="col" class="num">% natural</th>
+      </tr></thead>
+      <tbody><!-- filled by app.js --></tbody>
+      <tfoot><tr>
+        <th scope="row">Unmapped total</th>
+        <td class="num">87.93</td><td class="num">5.92</td>
+        <td class="num">100.39</td><td class="num">194.25</td>
+        <td class="num">45.3%</td>
+      </tr></tfoot>
+    </table>
+    </div>
+    <p class="flag-note">&ldquo;Central NY&rdquo; (2.46 mi) is a variant spelling
+      of CNY (Central New York) and is shown in the chapter table flagged
+      as such, not in the unmapped group.</p>
+  </section>
+</main>
+
+<footer class="page-foot">
+  <p><a href="case.html">The case for finishing the trail</a> &middot;
+    <a href="data-sources.html">Data sources &amp; methods</a> &middot;
+    <a href="https://northcountrytrail.org/" target="_blank" rel="noopener">North Country Trail Association</a></p>
+  <p>Built from NCTA&rsquo;s open centerline data (pull November 21, 2026).
+    No one at NCTA or NPS was contacted for this viewer; everything here
+    comes from public sources already on disk or cited on the data-sources page.
+    The urban-sidewalk split is derived &mdash; see the method note.</p>
+</footer>
+
+<script src="leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

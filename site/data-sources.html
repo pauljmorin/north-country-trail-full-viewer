@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data sources — North Country Trail completeness</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+<a class="back" href="index.html">&larr; Back to the map</a>
+<h1>Data sources</h1>
+<p class="subtitle">North Country Trail completeness viewer &mdash; every layer
+carries its references <em>and</em> its interpretation method: the exact
+rules used to turn raw data into the published classification, which
+attributes drove each call, and which placements are judgment. Someone
+reading this page later must be able to reproduce every classification
+from the references plus the stated rules.</p>
+
+<div class="note">
+<p><strong>A note on freshness.</strong> Most of these layers are snapshots,
+pulled on the dates given. A centerline pull is a record of its date, not a
+live feed &mdash; the pull date on each layer is the freshness signal. No one
+at NCTA or NPS was contacted for this viewer; everything here comes from
+public sources already on disk or cited below.</p>
+</div>
+
+<h2>The centerline — three kinds of miles</h2>
+
+<h3>Natural tread, urban sidewalk, road</h3>
+<p>The map draws the official route in three styles: solid green for natural
+tread (built off-road trail), solid amber for urban sidewalk, dashed red for
+road (trail not yet built). The three styles are three different claims, and
+only the first two come straight from NCTA&rsquo;s data.</p>
+<p class="src">Source: North Country Trail Association, on behalf of the
+National Park Service &mdash; <a href="https://services2.arcgis.com/UfGVyqUm4GHa2zrj/arcgis/rest/services/nct_public/FeatureServer">nct_public FeatureServer</a>,
+layer 2, &ldquo;North Country Trail &ndash; Public&rdquo;. Layer description:
+&ldquo;Existing Off-Road and On-Road route centerline segments of the North
+Country National Scenic Trail (NOCO), GCS North American 1983. Data is GPSd,
+digitized, or sourced from third-party data sets. Not for use at scales greater
+than 1:24,000.&rdquo; 4,102 features, last edited 2026-11-01T12:54:37Z,
+pulled November 21, 2026 (paginated, 1,000/page, outSR=4326, f=geojson).</p>
+<p class="src">Plus the Superior Hiking Trail layer, same server &mdash;
+<a href="https://services2.arcgis.com/UfGVyqUm4GHa2zrj/arcgis/rest/services/agol_sht_public/FeatureServer">agol_sht_public FeatureServer</a>,
+layer 1. 272 features, all Minnesota, chapter SHTA, 271 off-road + 1 on-road
+(0.10 mi). Pulled November 21, 2026. <strong>This is part of the official
+route and is NOT inside nct_public</strong> &mdash; without it Minnesota comes
+out ~300 miles short. Merged total: 4,870.55 len_miles / 4,871.24 geodesic
+miles. Overlap check: 0.13 mi of SHT lies within ~50 m of an nct_public line
+(0.0%) &mdash; no double-counting.</p>
+
+<h3>The urban rule — DERIVED, not NCTA data</h3>
+<p>NCTA&rsquo;s centerline only tags on-road vs off-road
+(<code>trail_stat</code>: &ldquo;NCT&rdquo; vs &ldquo;NCT (on-road)&rdquo;).
+The urban-sidewalk / road split is <strong>derived, never presented as
+coming from NCTA</strong>. The rule (v1):</p>
+<p>A mile counts as <strong>URBAN SIDEWALK</strong> if (a) NCTA itself tags
+the segment <code>trail_type = 'Sidewalk'</code> (69 features, 28.90 miles
+trail-wide, all under trail_stat NCT), <em>or</em> (b) an on-road mile falls
+inside a Census 2020 Urban Area <em>or</em> a Census 2024 incorporated
+place. Everything else on-road counts as <strong>ROAD</strong>.</p>
+<p>Why not Urban Area only? In Minnesota the UA rule catches 0.62 miles &mdash;
+it misses essentially every small-town traverse (Fergus Falls, Vergas, Tower,
+Grand Rapids center), because most NCT towns are below the 2,000-person UA
+threshold. Why not place only? The place rule is the main driver (85.80 of
+95.77 on-road urban miles trail-wide), but it has a known overcount &mdash;
+see the Cohasset flag below. Trail-wide the adopted rule gives 95.77
+on-road urban miles (UA-only 24.92; incorporated-place-only 85.80; any-place
+including CDPs 101.89). Adding the 28.90 native-Sidewalk miles gives 124.68
+urban sidewalk miles total.</p>
+<p class="src">Urban Areas source: Census 2020 Urban Areas, TIGERweb
+MapServer layer 1 (&ldquo;2020 Urban Areas&rdquo;, Jan 1, 2020 vintage),
+2,645 polygons, pulled November 21, 2026. 13 polygons repaired with
+buffer(0); re-running after repair changed the trail-wide UA-or-place figure
+by +0.05 mi &mdash; immaterial, documented not hidden. Places source: Census
+2024 cartographic boundary file cb_2024_us_place_500k (Mar 13, 2025),
+32,612 features; incorporated = LSAD 21 borough / 25 city / 43 town /
+47 village (19,696 features); CDPs are LSAD 57 and are <em>excluded</em>
+from the adopted rule (they would add 16.09 mi trail-wide; Vermont&rsquo;s
+urban miles come from the Middlebury UA plus CDPs &mdash; Vermont has 0.00
+incorporated-place miles).</p>
+
+<h3>Lengths — geodesic miles on WGS84</h3>
+<p>Every length is a geodesic length (WGS84, pyproj Geod) computed from each
+feature&rsquo;s geometry &mdash; never taken from a precomputed field without
+a cross-check. Cross-checks: the <code>len_miles</code> field sums to
+4,870.55 mi (0.69 mi / 0.01% below the geodesic total; median per-feature
+difference 0.02%, max 0.05%). <code>Shape__Length</code> (planar metres in
+UTM zone 16N) sums to 4,888.01 mi &mdash; 17 mi high, the expected UTM
+distortion away from zone 16; not used.</p>
+
+<h3>State assignment</h3>
+<p>Every segment was split at Census 2024 state boundaries (Shapely
+intersection, with overlap de-duplication), so state totals do not depend on
+NCTA&rsquo;s native <code>state</code> field. The native field agrees almost
+everywhere (single-state mismatch 0.74 mi total) and was used only to assign
+the 9.92 mi that falls in no state polygon and the 21 features with
+<code>state</code> = null (8.70 mi MN, 37.42 mi OH, 4.75 mi PA &mdash; all
+on-road, recovered geometrically). 11 features cross a state line.</p>
+<p class="src">State boundaries: Census 2024 cartographic boundary file
+cb_2024_us_state_500k (Mar 13, 2025).</p>
+
+<h3>Chapter rollup</h3>
+<p>Native <code>chapter</code> field; no chapter-boundary geometry exists
+yet, and the <code>ncta_region</code> field is NULL on all 4,102 nct_public
+features, so there is no native region rollup. Chapter totals sum to the
+trail total; the gaps affect per-chapter attribution, not the state table.
+See the flags section below for the unmapped codes.</p>
+
+<h3>What was checked and excluded (not part of the existing route)</h3>
+<ul>
+<li><strong>agol_flt</strong> (Finger Lakes Trail, 417 features, 382.46 mi)
+  &mdash; 100.0% of sampled points lie within ~50 m of an nct_public line.
+  Duplicate publication of the FLTC miles already in nct_public; excluded
+  to avoid double-counting.</li>
+<li><strong>agol_generalized_vermont_extension</strong> (20 features,
+  41.77 mi) &mdash; generalized duplicate of part of the Vermont route;
+  excluded.</li>
+<li><strong>adirondack__route</strong> (290 features, 226.94 mi) &mdash; the
+  service itself says &ldquo;For Planning purposes only&hellip; proposed North
+  Country&rdquo; route through Adirondack Park. <strong>Not existing trail;
+  excluded from the mileage table.</strong> It is the largest known planning
+  gap and belongs in the viewer as a separate &ldquo;proposed&rdquo; layer,
+  not in these totals.</li>
+<li><strong>nct_hss</strong> (3 features, 0 mi),
+  <strong>Old_Route_of_NCT</strong>, <strong>border_plan_rd_walk_agol</strong>,
+  <strong>Potential_County_Road_Walk</strong>, <strong>MI_GTR_gl2kal</strong>
+  (proposed Guernsey Lake&ndash;Kalkaska reroute) &mdash; planning/old-route
+  data, excluded.</li>
+</ul>
+
+<h2>State boundaries (click a state for its rollup)</h2>
+<p>Thin grey boundaries from the same Census 2024 state file used for the
+state assignment above. The popup rollup is the same three-way mileage as
+the state table on the map page.</p>
+
+<h2>PAD-US public lands</h2>
+<p>The ownership backbone under the gaps: the USGS Protected Areas Database
+of the United States (PAD-US), the national public-lands dataset, one pull.
+Off by default; it answers &ldquo;who owns the ground&rdquo; where the trail
+isn&rsquo;t built yet.</p>
+<div class="warn-box"><p><strong>Status, November 22, 2026: not yet wired.</strong>
+The data agent&rsquo;s note (<code>site/data/padus-note.md</code>) has not
+landed yet, so the viewer shows PAD-US as a clearly-marked placeholder
+(&ldquo;pending &mdash; no data yet&rdquo;) in the layer panel, and switching
+it on does nothing. The note will state whether PAD-US arrives as a GeoJSON
+file or a live tile service, in <code>type:</code> / <code>file:</code> /
+<code>url:</code> lines, and the viewer wires it from that note &mdash;
+GeoJSON file, or tile layer with the note&rsquo;s attribution. Nothing is
+guessed in the meantime.</p></div>
+
+<h2>The case panel (case.html)</h2>
+<h3>Build rate, gap closure, finish scenarios</h3>
+<p>Build-rate research, November 2026: miles built per year 2015&ndash;2025
+from NCTA annual and trail-progress reports, the North Star magazine, and
+IRS Form 990s; roadwalk eliminated per year 2020&ndash;2025 from the same
+reports; net GIS on-road decline 2019&ndash;2025 from the annual reports&rsquo;
+own off-road/on-road totals. Scenarios A&ndash;H divide the 1,495-mile
+end-2025 on-road gap by the stated rates. 2017 miles built could not be
+verified (no report or 990 figure located; ProPublica Nonprofit Explorer
+blocked in the research environment). No source publishes miles built by
+builder type, and no current NPS-certified total is published (latest is
+2018, &ldquo;over 1,775 miles&rdquo;).</p>
+<p class="src">Sources (full URLs in the build-rate report,
+~/workspace/research_notes/nct-build-rate-20261121-2212/report.md): NCTA 2025
+Annual Report; NCTA Form 990s 2023 and 2025; NCTA 2025&ndash;2030 Strategic
+Plan; NCTA 2020&ndash;2023 Strategic Plan Priority Objectives; NCTA Trail
+Progress Reports 2016, 2019, 2020; NCTA 2018 Annual Report; North Star,
+Winter 2022 (41-1), Winter 2023 (42-1), Winter 2024 (43-1), Winter 2025
+(44-1); National Trails System Act (16 U.S.C. &sect;1244); NPCA, &ldquo;The
+Long Way&rdquo;; NCTA FY2027 Funding + Legislative Requests and FY27 state
+fact sheets (Feb 2026).</p>
+<h3>What limits the rate</h3>
+<p>Land/easements (willing-seller-only authority, P.L. 111-11, 2009; no
+eminent domain, ever; &lt;50 NPS-owned miles); funding (~$1.5M/yr NPS
+operations; NCTA revenue $2.01M/$2.15M/$1.81M in 2023/2024/2025); volunteer
+capacity (~1,000&ndash;1,300 volunteers/yr, 65,000&ndash;91,000 hours/yr, 15&ndash;17
+paid staff); permitting (Adirondack moratorium, BWCA/NEPA, national-forest
+NEPA for reroutes/bridges/shelters). Each claim is cited to its source in
+the build-rate report.</p>
+<h3>Epoch history (1982 &rarr; 2005 &rarr; 2026)</h3>
+<p>Snapshot comparison, November 21&ndash;22, 2026, public sources only. Net
+line change between dated pictures of the route: +1,896 mi (1982&rarr;2005,
+200 m tolerance) and +1,907 mi (2005&rarr;2026, 100 m tolerance); both nets
+stable to &plusmn;2% across tolerances. Gross &ldquo;new&rdquo; figures
+(2,436 and 2,694 mi) are upper bounds mixing construction, re-routes,
+re-digitization, and coverage change &mdash; not miles built.</p>
+<p class="src">Snapshots: 1982 Comprehensive Plan route, &ldquo;Existing
+Trail&rdquo; (NCTA ArcGIS service, layer 1 Route, 101 of 239 features,
+999.7 mi); 2005 existing trail (NPS IRMA Ref 1035931, Stram 2005, 3,779
+arcs, 2,934.8 mi); 2005 potential route (NPS IRMA Ref 1035932, 1,217 arcs,
+2,828.5 mi); current centerline (NCTA public ArcGIS, pull Nov 21, 2026);
+OSM Michigan relation 11140515 (2020 vs today, supplementary only).
+Method and full results: ~/workspace/nct-completeness-viewer/epoch-methods.md
+and epoch-mileage-table.csv. The 2016 NY/PA centerline (NPS IRMA Ref
+2229138) has no retrievable geometry &mdash; metadata PDF only &mdash; so
+the 2005&rarr;2026 epoch cannot be split at 2016.</p>
+
+<h2>Flags — shown, not hidden</h2>
+<div class="warn-box">
+<p><strong>Cohasset, MN — 7.59 mi.</strong> The largest single
+&ldquo;urban&rdquo; chunk in Minnesota is a highway road-walk inside
+Cohasset&rsquo;s 35-square-mile city limits (pop. ~2,700). Most of it has no
+sidewalk; the place rule counts it as urban anyway. It is 58% of
+Minnesota&rsquo;s 13.03 urban miles and the biggest known overcount in the
+table. A future refinement could screen by road class or sidewalk presence;
+no such dataset is in hand.</p>
+<p><strong>~131 miles tagged to no chapter.</strong> 130.92 mi carry chapter
+= the literal string &ldquo;None&rdquo; (mostly ND, 32 features; VT 6) and
+21.84 mi carry null. Unmapped codes: ADK-ON 38.45 mi (NY, Finger Lakes Trail
+segments &mdash; probably an ADK data-entry variant), GTR 1.56 mi (MI,
+Guernsey Lake&ndash;Kalkaska proposed reroute area), LON 1.48 mi (ND, New
+Rockford Canal), plus &ldquo;Central NY&rdquo; 2.46 mi (variant of CNY).
+Chapter totals still sum to the trail total. Star of the North (STN) has
+only 10.21 mi tagged, though the chapter maintains ~27 mi &mdash; its
+remaining miles are probably tagged under other codes or &ldquo;None&rdquo;.</p>
+<p><strong>Minnesota ~8 mi off/on shift vs the 2025 Annual Report.</strong>
+Ours: 733.86 off / 141.37 on; report: 742 / 133. The totals match (+0.2) but
+~8 mi sits on opposite sides of the off/on line. Prime suspect: the six
+<code>state</code>-null Arrowhead on-road segments near Grand Rapids
+(8.70 mi) &mdash; possibly counted as off-road in the report&rsquo;s vintage,
+or reclassified between the report and the Nov 1, 2026 centerline. Open
+question; the numbers were not adjusted to match the report. (Michigan
+on-road: ours 266.20 vs report 274, &minus;7.8 &mdash; small vintage drift,
+same direction.) Published &ldquo;~4,800 miles&rdquo; is a round public number;
+the annual report&rsquo;s state table sums to 4,860; the measured total is
+4,871.24.</p>
+<p><strong>cert_stat is not usable for the completeness claim.</strong>
+Values: Certified 1,510.92 mi, Connector 2,326.40 mi, null 1,001.14 mi,
+blank 17.99 mi, &ldquo;Exisiting&rdquo; [sic] 6.55 mi, lowercase
+&ldquo;connector&rdquo; 8.24 mi. &ldquo;Connector&rdquo; is the largest bucket
+and its meaning in NCTA&rsquo;s data model is undocumented in the public
+layer. NPS&rsquo;s older published figure (&ldquo;1,775+ miles certified&rdquo;)
+matches neither the Certified bucket nor Certified+Connector. Until NCTA
+clarifies, completeness rests on trail_stat only.</p>
+<p><strong>Small data defects.</strong> One feature (OBJECTID 138, Buckeye
+Trail on-road, OH/BTA) has no geometry and len_miles 0 &mdash; a zero-length
+placeholder, no effect on totals. <code>trail_surf</code> holds numeric junk
+on 8 features. <code>trail_type</code> is null/blank/Unknown on 298.71
+off-road miles and 171.71 on-road miles. 9.92 mi of Michigan shoreline/bridge
+trail (Mackinac Bridge 4.09 mi, Lake Superior shore, Pictured Rocks) falls
+outside the 500k-generalized state polygon and was assigned to its native
+state (MI) &mdash; the generalization, not the trail, is wrong there.</p>
+</div>
+
+<h2>What this viewer does not show</h2>
+<p>By design (scope, November 21, 2026): no photo pins or classification,
+no shoulder-width measurement, no speed badges, no ATV layer, no timber
+exams, no Cass County datasets, no census switcher, no historical maps, no
+1939 aerials, no campsites / water access / trailheads as trip features, no
+&ldquo;what&rsquo;s walkable today&rdquo; lead. Parcels along gaps only are a
+later step, not in v1.</p>
+
+<p class="foot">Viewer built November 22, 2026. Mileage table v1 and notes:
+~/workspace/nct-completeness-viewer/mileage-table.csv and
+mileage-table-notes.md. Questions about the numbers start here, not with
+NCTA &mdash; no one at NCTA or NPS was contacted for this viewer.</p>
+</div>
+</body>
+</html>
