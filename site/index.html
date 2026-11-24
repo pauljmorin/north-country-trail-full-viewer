@@ -11,10 +11,15 @@
 <body>
 <div id="panel">
   <div class="masthead">
+    <img class="masthead-logo" src="ncta-logo.png"
+      alt="North Country Trail Association">
     <div class="masthead-words">
       <h1>North Country Trail</h1>
-      <p class="masthead-desc">Full trail viewer &mdash; North Dakota to Vermont</p>
+      <p class="masthead-desc">Full trail viewer</p>
     </div>
+    <button type="button" id="present-btn" class="present-btn"
+      title="Present — big screen"
+      aria-label="Present — big screen">⛶</button>
   </div>
 
   <div class="panel-actions">
@@ -23,9 +28,13 @@
   </div>
 
   <h2>Chapters</h2>
-  <p class="chapter-hint">Click a chapter to highlight its miles and zoom
-    to them. Click it again to clear. Mileage is the NCTA source
-    attribution, summed per chapter &mdash; see About for the caveats.</p>
+  <label class="chapter-field">Jump to a chapter
+    <select id="chapter-select">
+      <option value="">Choose a chapter&hellip;</option>
+    </select>
+  </label>
+  <p class="chapter-hint">Click a chapter to highlight its miles and
+    zoom to them.</p>
   <div id="chapter-list" role="listbox" aria-label="Chapters, west to east">
     <!-- chapter rows injected by app.js -->
   </div>
@@ -33,14 +42,11 @@
   <h2>Find</h2>
   <div id="gazetteer">
     <input id="gaz-search" type="search" autocomplete="off"
-      placeholder="Search places, mile markers, chapter boundaries&hellip;">
+      placeholder="Type a place, mile marker, or chapter&hellip;">
     <div id="gaz-results" role="listbox" aria-label="Place search results"></div>
   </div>
-  <p class="gaz-hint">Place search covers 8,930 entries &mdash; NCTA
-    points, state mile markers, and chapter boundaries. Type at least
-    two characters; the first eight matches are shown. Chainage is the
-    gazetteer's own chain walk (see Data sources for how it differs
-    from the chainage layer).</p>
+  <p class="gaz-hint">8,930 places along the trail. Type at least two
+    characters.</p>
 
   <div id="inspector" tabindex="-1"><!-- chapter record injected by app.js --></div>
 
@@ -75,6 +81,7 @@
       <button type="button" id="btn-legend" aria-pressed="false">Legend</button>
     </div>
   </div>
+  <button type="button" id="show-panel-btn" hidden>&lsaquo; Show panel</button>
 </div>
 <script src="leaflet.js"></script>
 <script src="esri-leaflet.js"></script>

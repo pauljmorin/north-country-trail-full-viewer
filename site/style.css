@@ -69,31 +69,64 @@ html, body {
 }
 #panel h2 {
   font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--ink-soft);
-  margin: 20px 0 6px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid var(--paper-line);
+  margin: 16px 0 6px;
+  border-bottom: 1px solid #d8d2bd;
+  padding-bottom: 3px;
 }
-#panel h2:first-of-type { margin-top: 14px; }
 
+/* Masthead (ITM pattern, Nov 24, 2026 reshape): the association
+   logo carries the association, the wordmark carries the trail —
+   one row on plain paper, closed by a hairline. */
 .masthead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   padding-bottom: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid var(--paper-line);
 }
-.masthead h1 {
-  font-size: 1.35rem;
-  line-height: 1.2;
-  margin: 0;
+.masthead-logo {
+  height: 44px;
+  width: auto;
+  max-width: 128px;
+  object-fit: contain;
+  object-position: left center;
+}
+.masthead-words { min-width: 0; }
+#panel h1 {
+  font-size: 17px;
+  font-weight: 700;
   color: var(--trail-deep);
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin: 0;
 }
 .masthead-desc {
-  margin: 2px 0 0;
-  font-size: 0.9rem;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
   color: var(--ink-soft);
+  margin: 3px 0 0;
 }
+
+/* Present button (ITM pattern): a small icon at the panel edge,
+   riding at the right end of the masthead row. */
+.present-btn {
+  margin-left: auto;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid #b9cba5;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.present-btn:hover { background: var(--paper-hover); }
 
 .panel-actions { display: flex; gap: 8px; }
 .copy-link-btn, .whole-trail-btn {
@@ -111,10 +144,34 @@ html, body {
 
 /* --------------------------------------------------------- chapters */
 
-.chapter-hint, .gaz-hint {
+.chapter-hint {
   font-size: 0.85rem;
   color: var(--ink-soft);
   margin: 4px 0 8px;
+}
+.gaz-hint {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  margin: 5px 2px 0;
+}
+/* Chapter dropdown (Nov 24, 2026 — ITM-look reshape): one
+   <select> over the chapter list, same field pattern as the
+   Wayback year aerial selector below. */
+.chapter-field {
+  display: block;
+  margin: 8px 0 0;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+.chapter-field select {
+  width: 100%;
+  margin-top: 4px;
+  padding: 6px 8px;
+  font-size: 0.92rem;
+  border: 1px solid var(--paper-line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
 }
 #chapter-list {
   max-height: 320px;
@@ -155,12 +212,16 @@ html, body {
 #gazetteer { position: relative; }
 #gaz-search {
   width: 100%;
-  padding: 8px 10px;
-  font-size: 0.95rem;
-  border: 1px solid var(--paper-line);
-  border-radius: 6px;
+  padding: 6px 9px;
+  font-size: 0.9rem;
+  border: 1px solid #a89a5b;
+  border-radius: 14px;
   background: #fff;
   color: var(--ink);
+}
+#gaz-search:focus {
+  outline: 2px solid var(--trail);
+  outline-offset: 1px;
 }
 #gaz-results {
   position: absolute;
@@ -241,6 +302,25 @@ div.gaz-result { cursor: default; color: var(--ink-soft); }
 }
 
 /* ----------------------------------------------------- layer toggles */
+
+/* Group headings (ITM pattern, Nov 24, 2026 reshape): small-caps
+   disclosure rows — clicking a heading collapses its group.
+   Groups start open. */
+.tog-group {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  margin: 10px 0 2px;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+.tog-group:first-child { margin-top: 2px; }
+.tog-group:hover { background: var(--paper-hover); }
+.tog-group-body.collapsed { display: none; }
 
 .tog-row {
   display: flex;
@@ -326,6 +406,28 @@ div.gaz-result { cursor: default; color: var(--ink-soft); }
 .panel-foot a { color: var(--trail-deep); }
 
 /* -------------------------------------------------------------- map */
+
+/* Present mode (Nov 24, 2026 — ITM-look reshape): the panel
+   hides and the map fills the screen; ‹ Show panel brings it
+   back. */
+body.presenting #panel { display: none; }
+body.presenting #map { left: 0; }
+#show-panel-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--paper-line);
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+#show-panel-btn[hidden] { display: none; }
 
 #map {
   position: fixed;
@@ -436,4 +538,9 @@ body.base-white #map { background: #fff; }
     height: 54vh;
   }
   #chapter-list { max-height: 180px; }
+  /* Masthead compresses, never stacks (ITM pattern). */
+  .masthead { padding-bottom: 6px; margin-bottom: 6px; gap: 10px; }
+  .masthead-logo { height: 32px; max-width: 96px; }
+  #panel h1 { font-size: 15px; white-space: nowrap; }
+  .masthead-desc { font-size: 10px; }
 }

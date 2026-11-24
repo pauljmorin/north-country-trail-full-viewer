@@ -15,9 +15,14 @@
  *     the old viewer drew: natural tread (solid green), urban
  *     sidewalk (solid amber), road (dashed red)
  *   - chapters: a west-to-east list from data/chapter-extents.json;
- *     click a chapter to highlight its miles and zoom to them
+ *     click a chapter to highlight its miles and zoom to them.
+ *     A chapter <select> over the list (Nov 24, 2026) flies to a
+ *     chapter the same way a row click does.
  *   - national basemaps only (no Minnesota-only bases)
  *   - copy link, legend
+ *   - panel dressed to the Itasca Moraine chapter viewer's look
+ *     (Nov 24, 2026): NCTA logo masthead, Present button, small-caps
+ *     collapsible layer groups, one-line Find hint.
  *   - every wave-1 layer wired into the registry: alerts, reroutes,
  *     NBI bridges, NWI wetlands, BIA tribal lands, PAD-US (live),
  *     chainage, chapter boundaries, road walk, camping, NCTA Places,
@@ -1378,6 +1383,16 @@ function featuresForChapter(code) {
 function buildChapterList() {
   var wrap = document.getElementById("chapter-list");
   wrap.innerHTML = "";
+  /* The dropdown over the list carries the same chapters, west to
+     east, as one <select> — the Wayback year selector's pattern. */
+  var sel = document.getElementById("chapter-select");
+  if (sel) {
+    sel.innerHTML = "";
+    var blank = document.createElement("option");
+    blank.value = "";
+    blank.textContent = "Choose a chapter…";
+    sel.appendChild(blank);
+  }
   chapterExtents.forEach(function (row) {
     var btn = document.createElement("button");
     btn.type = "button";
@@ -1395,8 +1410,25 @@ function buildChapterList() {
     btn.title = esc(row.west) + " — " + esc(row.east);
     btn.addEventListener("click", function () { toggleChapter(row.code); });
     wrap.appendChild(btn);
+    if (sel) {
+      var opt = document.createElement("option");
+      opt.value = row.code;
+      opt.textContent = row.name + " (" + row.code + ")";
+      sel.appendChild(opt);
+    }
   });
 }
+
+/* Chapter dropdown: choosing one flies to it exactly as clicking
+   its row does; choosing the blank entry clears the selection. */
+(function wireChapterSelect() {
+  var sel = document.getElementById("chapter-select");
+  if (!sel) return;
+  sel.addEventListener("change", function () {
+    if (sel.value) selectChapter(sel.value, false);
+    else clearChapter();
+  });
+})();
 
 function toggleChapter(code) {
   if (selectedChapter === code) clearChapter();
@@ -1446,6 +1478,9 @@ function markChapterRow(code) {
       row.classList.toggle("on", on);
       row.setAttribute("aria-selected", on ? "true" : "false");
     });
+  /* Keep the dropdown in step with row clicks and clears. */
+  var sel = document.getElementById("chapter-select");
+  if (sel) sel.value = code || "";
 }
 function showChapterRecord(row, featureCount) {
   var el = document.getElementById("inspector");
@@ -1524,9 +1559,26 @@ function buildLayerToggles() {
     if (groups.indexOf(def.group) < 0) groups.push(def.group);
   });
   groups.forEach(function (group) {
-    var h = document.createElement("h2");
-    h.textContent = group;
+    /* ITM pattern: the group heading is a small-caps disclosure
+       row; clicking it (or Enter/Space on it) collapses the
+       group. Groups start open — nothing is hidden by default. */
+    var h = document.createElement("div");
+    h.className = "tog-group";
+    h.setAttribute("role", "button");
+    h.setAttribute("aria-expanded", "true");
+    h.tabIndex = 0;
+    h.textContent = "▾ " + group;
+    var body = document.createElement("div");
+    body.className = "tog-group-body";
+    h.addEventListener("click", function () { toggleLayerGroup(h, body); });
+    h.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggleLayerGroup(h, body);
+      }
+    });
     wrap.appendChild(h);
+    wrap.appendChild(body);
     LAYERS.forEach(function (def) {
       if (def.group !== group) return;
       if (def.search) return; /* gazetteer: wired to Find, not a toggle */
@@ -1562,9 +1614,15 @@ function buildLayerToggles() {
           writeShareHash();
         }
       });
-      wrap.appendChild(row);
+      body.appendChild(row);
     });
   });
+}
+function toggleLayerGroup(h, body) {
+  var collapsed = body.classList.toggle("collapsed");
+  h.textContent = (collapsed ? "▸ " : "▾ ") +
+    h.textContent.replace(/^[▸▾] /, "");
+  h.setAttribute("aria-expanded", collapsed ? "false" : "true");
 }
 
 /* ------------------------------------------------------------ legend
@@ -1624,6 +1682,32 @@ function buildLegend() {
     if (hidden) card.removeAttribute("hidden");
     else card.setAttribute("hidden", "");
     btn.setAttribute("aria-pressed", hidden ? "true" : "false");
+  });
+})();
+
+/* Present (Nov 24, 2026 — ITM-look reshape): the ⛶ button in the
+   masthead hides the panel so the map fills the screen; ‹ Show
+   panel (or Esc) brings it back. No present strip or record card —
+   the national viewer has no section record to present. */
+(function wirePresent() {
+  var btn = document.getElementById("present-btn");
+  var show = document.getElementById("show-panel-btn");
+  if (!btn || !show) return;
+  function enter() {
+    document.body.classList.add("presenting");
+    show.hidden = false;
+    map.invalidateSize();
+  }
+  function exit() {
+    document.body.classList.remove("presenting");
+    show.hidden = true;
+    map.invalidateSize();
+  }
+  btn.addEventListener("click", enter);
+  show.addEventListener("click", exit);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" &&
+        document.body.classList.contains("presenting")) exit();
   });
 })();
 
