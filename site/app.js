@@ -1734,8 +1734,15 @@ function buildLegend() {
 
 /* ---------------------------------------------------------- copy link
    Share hash (ITM pattern): #view=lat,lng,zoom & #base=code &
-   #layers=id,-id & #chapter=CODE. The hash is rewritten on every
-   move so the address bar always holds the current view. */
+   #layers=… & #chapter=CODE. The hash is rewritten on every
+   move so the address bar always holds the current view.
+   COMPACT layers= (Paul, Nov 24, 2026): only layers whose state
+   differs from their default are listed — "id" for a layer that
+   is on but off by default, "-id" for one that is off but on by
+   default. Unlisted layers keep their defaults, so the reader
+   accepts both this compact form and the old long form (every
+   layer listed), and old shared links keep working. The part is
+   omitted entirely when nothing differs from the defaults. */
 var shareHashReady = true;
 function writeShareHash() {
   if (!shareHashReady || !history.replaceState) return;
@@ -1748,9 +1755,11 @@ function writeShareHash() {
   var layerParts = [];
   LAYERS.forEach(function (def) {
     if (def.stub || !def.box) return;
-    layerParts.push(def.box.checked ? def.id : "-" + def.id);
+    if (def.box.checked !== !!def.onByDefault) {
+      layerParts.push(def.box.checked ? def.id : "-" + def.id);
+    }
   });
-  parts.push("layers=" + layerParts.join(","));
+  if (layerParts.length) parts.push("layers=" + layerParts.join(","));
   if (selectedChapter) parts.push("chapter=" + selectedChapter);
   history.replaceState(null, "", "#" + parts.join("&"));
 }
@@ -1857,7 +1866,11 @@ ensureLayer(baseDef, true).then(function () {
   return ensureLayer(chaptersDef, false);
 }).then(function () {
   /* #layers= hash: tokens switch layers on/off; a token prefixed
-     with "-" switches that layer off. Unknown tokens are ignored. */
+     with "-" switches that layer off. Unknown tokens are ignored.
+     Layers the hash does not name keep their defaults, so the
+     compact form (only layers that differ from default) and the
+     old long form (every layer listed) both apply — old shared
+     links keep working. */
   var m = /layers=([a-z,\-]+)/.exec(location.hash || "");
   if (m) {
     var wanted = [], unwanted = [];
