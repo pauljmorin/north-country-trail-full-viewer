@@ -1,0 +1,1432 @@
+{
+ "type": "FeatureCollection",
+ "metadata": {
+  "dataset": "NCTA trail alerts (alert points), national \u2014 no geographic clip",
+  "source_layer_id": 1,
+  "source_layer_name": "trail_alerts",
+  "date_note": "date_ms is the service's stored instant verbatim; date is its America/Chicago calendar date (the service stores UTC midnight of the following day \u2014 see pull_trail_alerts_national.py).",
+  "feature_count": 83,
+  "source_service": "https://services2.arcgis.com/UfGVyqUm4GHa2zrj/arcgis/rest/services/trail_alerts/FeatureServer",
+  "pulled_utc_date": "2026-11-24",
+  "envelope_wgs84": {
+   "xmin": -102.0,
+   "ymin": 38.2,
+   "xmax": -72.3,
+   "ymax": 48.6
+  },
+  "clip_method": "Envelope selection over the national trail envelope (object-id fetch, chunk-verified); no Minnesota or chapter clip; positions from GeoJSON geometry requested with outSR=4326"
+ },
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -100.843846,
+     47.399796
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - McClusky Canal",
+    "location": "Trail Alert - McClusky Canal",
+    "date": "2020-12-31",
+    "date_ms": 1609459200000,
+    "description": "McClusky Canal.There is a major trail detour in central North Dakota because of a slide repair project on the McClusky Canal on the McClusky Canal that will be going on for the next 3+ years. Follow the mapped bypassed"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -100.904141,
+     47.435358
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - McClusky Canal",
+    "location": "Trail Alert - McClusky Canal",
+    "date": "2020-12-31",
+    "date_ms": 1609459200000,
+    "description": "McClusky Canal.There is a major trail detour in central North Dakota because of a slide repair project on the McClusky Canal on the McClusky Canal that will be going on for the next 3+ years. Follow the mapped bypassed"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -80.613275,
+     40.729026
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - Beaver Creek State Park",
+    "location": "Trail Alert - Beaver Creek State Park",
+    "date": "2020-12-31",
+    "date_ms": 1609459200000,
+    "description": "The Trail between the campground and the Pioneer Village remains closed until construction is completed later in 2021.The Family Campground is scheduled to reopen in June 2021.  Information about campground reservations can be found on the ODNR website."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -93.937686,
+     47.133051
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - Milton Lake Rd.",
+    "location": "Trail Alert - Milton Lake Rd.",
+    "date": "2022-09-01",
+    "date_ms": 1662076800000,
+    "description": "The segment along Milton Lake Rd may be underwater and deep enough to prevent vehicle access to Trailhead. The road has a gravel bottom but exercise caution when crossing. Hikers may need to use the bypass trail following Milton Lake Dr, CR-52 and FR2321"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.304879,
+     40.639627
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - Magnolia, OH",
+    "location": "Trail Alert - Magnolia, OH",
+    "date": "2022-11-13",
+    "date_ms": 1668384000000,
+    "description": "The one mile segment of off-road NCT west of Magnolia, OH has been closed by the landowner. Hikers should follow the road walk blazes on Imperial Rd. NW and Magnolia Rd. NW to bypass this section until the issue has been reso"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.427735,
+     44.027202
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - Crown Point State Historic Site",
+    "location": "Trail Alert - Crown Point State Historic Site",
+    "date": "2022-12-21",
+    "date_ms": 1671667200000,
+    "description": "The Crown Point State Historic Site is currently undergoing a Unit Management Plan update. The proposed NCNST route which traverses the old fort ramparts has been submitted for approval in this process. Until then, use Grandview Drive as the NCNST route."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.894972,
+     41.04634
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - State Game Lands 95",
+    "location": "Trail Alert - State Game Lands 95",
+    "date": "2023-02-13",
+    "date_ms": 1676332800000,
+    "description": "The NCT north and south of Pry Rd will be closed on Tuesday Feb. 14, 2023 due to an annual controlled burn by the Pa. Game Commission"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.882009,
+     46.564706
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - Heart of the Lakes Trail",
+    "location": "Trail Alert - Heart of the Lakes Trail",
+    "date": "2023-07-04",
+    "date_ms": 1688515200000,
+    "description": "The NCT now follows the Heart of the Lakes paved multi-use trail which lies adjacent to the roads.  This NCT segment is not yet signed."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -92.201983,
+     47.824572
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - Lake Vermilion State Park",
+    "location": "Trail Alert - Lake Vermilion State Park",
+    "date": "2023-07-04",
+    "date_ms": 1688515200000,
+    "description": "In Lake Vermilion State Park, there are backcountry campsites (fee required) just off the NCT's route on the Mesabi Trail.  See https://files.dnr.state.mn.us/maps/state_parks/spk00285.pdf"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.666702,
+     43.853829
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - Adirondack Park",
+    "location": "Trail Alert - Adirondack Park",
+    "date": "2023-10-22",
+    "date_ms": 1698019200000,
+    "description": "Large flooded area.  Alt. route available to the north."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.451781,
+     41.234624
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - Deer Creek Crossing",
+    "location": "Trail Alert - Deer Creek Crossing",
+    "date": "2023-12-17",
+    "date_ms": 1702857600000,
+    "description": "Near Shippenville, the Trail goes through PA SGL 63 where it traverses Deer Creek and there are no structures for passage. This crossing may be dangerous due to the changing water levels, especially during spring runoff or after significant storm events."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -78.921188,
+     41.928715
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - Johnnycake Run",
+    "location": "Trail Alert - Johnnycake Run",
+    "date": "2024-01-09",
+    "date_ms": 1704844800000,
+    "description": "The NCT goes through the Tracy Ridge system of ANF where it traverses both Johnnycake and Tracy Run. Currently there are no structures for passage."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -78.920179,
+     41.959043
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - Tracy Run",
+    "location": "Trail Alert - Tracy Run",
+    "date": "2024-01-09",
+    "date_ms": 1704844800000,
+    "description": "The NCT goes through the Tracy Ridge system of ANF where it traverses both Johnnycake and Tracy Run. Currently there are no structures for passage."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.660391,
+     46.325711
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - Mellen",
+    "location": "Trail Alert - Mellen",
+    "date": "2024-03-11",
+    "date_ms": 1710201600000,
+    "description": "The City of Mellen will be replacing the highway bridge starting in June, necessitating a detour this summer."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -91.41867,
+     47.196447
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - Superior Hiking Trail - Split Rock River Loop",
+    "location": "Trail Alert - Superior Hiking Trail - Split Rock River Loop",
+    "date": "2024-04-29",
+    "date_ms": 1714435200000,
+    "description": "The eastern side of the Split Rock River Loop will close September 1 and impact 1.8 miles of the main SHT corridor. This project is designed to allow trail users to easily bypass the closed trail section using temporary reroutes."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -91.287921,
+     47.298876
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - Superior Hiking Trail - Bean and Bear Loop",
+    "location": "Trail Alert - Superior Hiking Trail - Bean and Bear Loop",
+    "date": "2024-04-29",
+    "date_ms": 1714435200000,
+    "description": "The Bean and Bear Lakes Loop closure will begin May 15 and impacts 2.2 miles of the main SHT corridor.  This project is designed to allow trail users to easily bypass the closed trail section using temporary reroutes."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.590013,
+     46.394519
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - USGS River Gauge for Tyler Forks River at Stricker Road",
+    "location": "USGS River Gauge for Tyler Forks River at Stricker Road",
+    "date": "2024-06-24",
+    "date_ms": 1719273600000,
+    "description": "https://waterdata.usgs.gov/monitoring-location/04026561/#parameterCode=00065&period=P7D&showMedian=false"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.647543,
+     46.87893
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Rochert, MN",
+    "location": "Rochert, MN",
+    "date": "2024-07-01",
+    "date_ms": 1719878400000,
+    "description": "The NCT is currently flooded south of the Otter Tail River ford where it goes around a private land cornerpost.  The water may be up to 12\" deep.  Note: this flooded spot is between the white- blazed ford bypass trail and the river ford."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.340446,
+     40.842746
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Downtown Delphos",
+    "location": "Downtown Delphos",
+    "date": "2024-07-09",
+    "date_ms": 1720569600000,
+    "description": "Ongoing structural maintenance on Lock 23 results in a temporary trail closure starting at Third Street. Trail users should use the following directions and can expect the detoured trail to be blazed on the ground."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -93.638994,
+     47.221392
+    ]
+   },
+   "properties": {
+    "title": null,
+    "location": null,
+    "date": "2024-07-15",
+    "date_ms": 1721088000000,
+    "description": "The NCT is now complete from CR-17 west to True Road but this is currently a dead-end segment.  The Arrowhead Chapter has cleared the corridor south of True Road and built a 200' puncheon but the trail corridor is not mowed and the tread is not finished."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.825826,
+     48.090148
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Gunflint Trail",
+    "location": "Gunflint Trail",
+    "date": "2024-07-15",
+    "date_ms": 1721088000000,
+    "description": "A new segment of the NCT was built in May that connects the Kekekabic Trail with the Border Route Trail directly across CR-12 (Gunflint Trail).  The old Kekekabic Trail out to CR-12 is now a spur to the trailhead parking area."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -99.986423,
+     47.676772
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Lonetree WMA - prairie restoration",
+    "location": "Lonetree WMA - prairie restoration",
+    "date": "2024-07-25",
+    "date_ms": 1721952000000,
+    "description": "ND Game & Fish is doing a prairie restoration here that should be complete in 2029 - now it's planted to row crops. Hikers should follow the mowed detour south of the field and then along its eastern edge."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.220234,
+     40.667627
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Citrus Road",
+    "location": "Citrus Road",
+    "date": "2025-02-02",
+    "date_ms": 1738540800000,
+    "description": "Please exercise caution on this stretch of road between Malvern and Waynesburg due to ongoing construction from utility improvements."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -101.158932,
+     47.553721
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - Audubon National Wildlife Refuge",
+    "location": "Trail Alert - Audubon National Wildlife Refuge",
+    "date": "2025-05-04",
+    "date_ms": 1746403200000,
+    "description": "Shelterbelt clearing along the NCT has created potential safety issues"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.261172,
+     39.143419
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Roundbottom Road",
+    "location": "Roundbottom Road",
+    "date": "2025-05-13",
+    "date_ms": 1747180800000,
+    "description": "Please exercise caution and remain alert while hiking through this area. The Trail is routed along a busy roadway between Perintown and South Milford."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.562072,
+     46.405513
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Middle crossing of Hwy 169",
+    "location": "Middle crossing of Hwy 169",
+    "date": "2025-06-07",
+    "date_ms": 1749340800000,
+    "description": "This is a gated private road - no public access is available to the NCT"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.261172,
+     39.143419
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Roundbottom Road",
+    "location": "Roundbottom Road",
+    "date": "2025-06-13",
+    "date_ms": 1749859200000,
+    "description": "Please exercise caution and remain alert while hiking through this area. The Trail is routed along a busy roadway between Perintown and South Milford."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -89.206908,
+     46.695
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - Ontonagon County",
+    "location": "Trail Alert - Ontonagon County",
+    "date": "2025-07-07",
+    "date_ms": 1751932800000,
+    "description": "Crossing may be impassable due to Victoria Dam releases\u2014especially after rain or through mid-June. Flow over 650cfs = high water. Check uppco.com/hydro-water-levels (Ontonagon R. > Victoria) or call (906)886-2637 and leave a message. Alternative 11-mile "
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -89.213542,
+     46.707176
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - Victoria Dam Rd",
+    "location": "Trail Alert - Victoria Dam Rd",
+    "date": "2025-07-07",
+    "date_ms": 1751932800000,
+    "description": "Crossing may be impassable due to Victoria Dam releases\u2014especially after rain or through mid-June. Flow over 650cfs = high water. Check uppco.com/hydro-water-levels (Ontonagon R. > Victoria) or call (906)886-2637 and leave a message. Alternative 11-mile "
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -89.175745,
+     46.647821
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Trail Alert - US-45",
+    "location": "Trail Alert - US-45",
+    "date": "2025-07-07",
+    "date_ms": 1751932800000,
+    "description": "Crossing may be impassable due to Victoria Dam releases\u2014especially after rain or through mid-June. Flow over 650cfs = high water. Check uppco.com/hydro-water-levels (Ontonagon R. > Victoria) or call (906)886-2637 and leave a message. Alternative 11-mile "
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.291023,
+     47.067437
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Tamarac NWR to Lake George",
+    "location": "Tamarac NWR to Lake George",
+    "date": "2025-07-26",
+    "date_ms": 1753574400000,
+    "description": "A bad windstorm recently hit the North Country Trail in the Tamarac NWR-Itasca-Lake George-Bemidji area. Hikers should expect downed trees on the trail. "
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -100.33632,
+     47.698248
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - McClusky Canal - Lonetree WMA",
+    "location": "McClusky Canal - Lonetree WMA",
+    "date": "2025-07-31",
+    "date_ms": 1754006400000,
+    "description": "Rough road - not mowed.  Use caution while hiking."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.368085,
+     40.27736
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Loramie Township",
+    "location": "Loramie Township",
+    "date": "2025-08-25",
+    "date_ms": 1756166400000,
+    "description": "ODOT is closing Rangeline Road at the intersection of SR 66, heading south along the NCT/BT. This closure is in effect for 24 days while road repairs are made. There is no viable detour at this time."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -91.874341,
+     47.902336
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Ely, MN",
+    "location": "Ely, MN",
+    "date": "2025-08-28",
+    "date_ms": 1756425600000,
+    "description": "New Ely regional trailhead center is open"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.417646,
+     47.169349
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert - Clearwater County Forest",
+    "location": "Clearwater County Forest",
+    "date": "2025-09-08",
+    "date_ms": 1757376000000,
+    "description": "Salvage logging to occur west of CR-39 this fall - closing the NCT between Mackenzie Forest Rd and CR-39."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -97.632965,
+     46.383977
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Deak Colt Creek Rec. Area",
+    "location": "Roadwalk to Dead Colt Creek Rec. Area",
+    "date": "2025-11-11",
+    "date_ms": 1762905600000,
+    "description": "The Colton's Crossing Bridge is closed - even for pedestrian use."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -93.561923,
+     47.2247
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: City of Grand Rapids, MN",
+    "location": "City of Grand Rapids, MN",
+    "date": "2025-11-16",
+    "date_ms": 1763337600000,
+    "description": "There is a construction project that has temporarily closed a section of the paved multi-use trail between the Forest History Center and the Grand Itasca hospital.  Hikers should walk CR-76 and SW 8th Street around it until completed."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -93.761352,
+     47.16894
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Between Remer and Cohasset",
+    "location": "Between Remer and Cohasset",
+    "date": "2026-03-02",
+    "date_ms": 1772496000000,
+    "description": "The NCT is cleared and blazed east of Hwy 6 and the tread is constructed to the new campsite just east of the little pond"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -92.071354,
+     47.771363
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Embarrass to Tower",
+    "location": "Embarrass to Tower",
+    "date": "2026-03-02",
+    "date_ms": 1772496000000,
+    "description": "The Mesabi Trail between Embarrass and Tower will be completed in late summer 2026."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -93.256172,
+     47.328485
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Calumet",
+    "location": "Calumet",
+    "date": "2026-03-02",
+    "date_ms": 1772496000000,
+    "description": "Hill Annex Mine State Park is permanently closed as they're mining iron ore again"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.2128,
+     39.365
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: South Lebanon",
+    "location": "South Lebanon",
+    "date": "2026-03-22",
+    "date_ms": 1774224000000,
+    "description": "Due to infrastructure improvements, a section of the NCT/Little Miami Scenic Trail near South Lebanon will be temporarily closed. A north and south detour will be signed on the ground."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.561531,
+     46.934347
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Tamarac National Wildlife Refuge",
+    "location": "Tamarac National Wildlife Refuge",
+    "date": "2026-04-12",
+    "date_ms": 1776038400000,
+    "description": "The 400th Ave. / Rogstad Campsite is CLOSED as the property is now owned by the U.S. Fish & Wildlife Service, which does not allow overnight use."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -86.01386,
+     44.26748
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: High Bridge Rd - Manistee River  ",
+    "location": "High Bridge Rd - Manistee River  ",
+    "date": "2026-04-13",
+    "date_ms": 1776124800000,
+    "description": "The section of trail that is adjacent to High Bridge Rd has been deemed closed due to erosion from flooding events. The road itself is also closed between River Rd and Chicago Ave. For long distance hikers follow the road walk from M-55 to Coates Hwy."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.38552,
+     44.68501
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: N. Branch Boardman River",
+    "location": "N. Branch Boardman River - Between 605 and Broomhead Rd",
+    "date": "2026-04-15",
+    "date_ms": 1776297600000,
+    "description": "Due to flooding and erosion follow the flagged reroute for approx. 0.3 miles"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.67878,
+     44.44034
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: 12 & 15 Roads and trail NE of Mesick",
+    "location": "12 & 15 Roads and trail NE of Mesick",
+    "date": "2026-04-21",
+    "date_ms": 1776816000000,
+    "description": "12 Rd is closed due to a sinkhole. 15 Rd is passable but all/4 wheel drive is strongly advised due to multiple swales. East of the parking area the NCT is flooded with multiple structures still under water. Avoid this section if possible. "
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.534003,
+     46.403959
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Enbridge Line 5",
+    "location": "Enbridge Line 5",
+    "date": "2026-04-26",
+    "date_ms": 1777248000000,
+    "description": "Enbridge has begun Line 5 relocation work affecting the NCT between Mellen and Gurney. Expect heavy traffic on Vogues Rd and Box Spring Rd. Possible detours/closures. Access Wren Falls via Casey Sag Rd to Sullivan Forest R"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.53448,
+     44.49631
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: West of Baxter Bridge",
+    "location": "West of Baxter Bridge",
+    "date": "2026-04-29",
+    "date_ms": 1777507200000,
+    "description": "A section of trail has eroded due to the spring flooding. The Chapter has flagged a rough reroute. The east end is marked with yellow caution tape while the west end is blocked by logs at the top of the bluff. "
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.9363,
+     45.98629
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Brevort Dam Rd",
+    "location": "Brevort Dam Rd",
+    "date": "2026-05-19",
+    "date_ms": 1779235200000,
+    "description": "Parking at the end of Brevort Dam Rd will no be accessible as the road bridge over Brevort River will be replaced. Construction is planned between June 15 until August 31. "
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.55196,
+     46.93648
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Tamarac NWR",
+    "location": "Tamarac NWR",
+    "date": "2026-06-11",
+    "date_ms": 1781222400000,
+    "description": "The new NCT route and campsite east of Tamarac NWR is now open"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -91.851087,
+     46.284234
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Douglas County Wildlife Area (Bird Sanctuary)",
+    "location": "Douglas County Wildlife Area (Bird Sanctuary)",
+    "date": "2026-06-22",
+    "date_ms": 1782172800000,
+    "description": "Questionable water source at \"Rover Lake\" as it continues to shrink. I would call the water there questionable at best. The nearest water sources now are Spring Creek (46.270284, -91.905587) or Leo Creek ~(46.319867, -91.824471)."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.04921,
+     46.64307
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Black River - Ottawa National Forest",
+    "location": "Black River - Ottawa National Forest",
+    "date": "2026-07-12",
+    "date_ms": 1783900800000,
+    "description": "The Ottawa NF will be repairing and replacing waterfall viewing platforms, stairways, and trail structures along the Black River corridor. Expected closures could last thru fall 2027. "
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.288,
+     39.164
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Milford, Ohio",
+    "location": "Milford, Ohio",
+    "date": "2026-07-19",
+    "date_ms": 1784505600000,
+    "description": "Valley View Nature Preserve is undergoing a riverbank restoration project. Construction is expected to be complete fall 2026. For the most up to date closure information and detour directions, please visit: https://www.buckeyetrail.org/updates/page-br8ik"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.288,
+     39.164
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Milford, Ohio",
+    "location": "Milford, Ohio",
+    "date": "2026-07-19",
+    "date_ms": 1784505600000,
+    "description": "Valley View Nature Preserve riverbank restoration is expected to finish fall 2026. Check current closure information and detours: https://www.buckeyetrail.org/updates/page-br8ikbhk5qlrbmob"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -94.8224,
+     47.059418
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Waboose Lake",
+    "location": "Waboose Lake, Paul Bunyan State Forest",
+    "date": "2026-08-11",
+    "date_ms": 1786492800000,
+    "description": "The campsite and adjacent trail was recently vandalized with graffiti.  It is currently being addressed by the Minnesota DNR and the ITM Chapter hopes that it will be rehabbed soon.  Please know that the graffiti is very inappropriate and is pervasive."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -100.138008,
+     47.678335
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: McClusky and New Rockford Canals",
+    "location": "McClusky and New Rockford Canals",
+    "date": "2026-08-13",
+    "date_ms": 1786665600000,
+    "description": "USBR advises hikers not to filter water from McClusky or New Rockford Canals due to very poor quality. Water sources are limited between MM84 and MM184. Plan water carries; consult the full alert for alternate sources."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -82.0574,
+     39.5412
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Burr Oak State Park \u2014 southern endpoint",
+    "location": "Burr Oak State Park \u2014 southern endpoint",
+    "date": "2026-08-17",
+    "date_ms": 1787011200000,
+    "description": "NCT/BT near Burr Oak State Park may flood after heavy rain. No acceptable or safe road-walk alternatives exist during flooding. Check water levels before hiking: https://www.lrh-wc.usace.army.mil/wm/?basin/hoc/tje"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -82.0328,
+     39.5728
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Burr Oak State Park \u2014 northern endpoint",
+    "location": "Burr Oak State Park \u2014 northern endpoint",
+    "date": "2026-08-17",
+    "date_ms": 1787011200000,
+    "description": "NCT/BT near Burr Oak State Park may flood after heavy rain. No acceptable or safe road-walk alternatives exist during flooding. Check water levels before hiking: https://www.lrh-wc.usace.army.mil/wm/?basin/hoc/tje"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.119,
+     39.008
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: East Fork State Park (Dry Boot Alternative)",
+    "location": "East Fork State Park (Dry Boot Alternative)",
+    "date": "2026-08-20",
+    "date_ms": 1787270400000,
+    "description": "The trail along East Fork Lake is subject to seasonal and periodic flooding. A permanent alternate route has been identified. For more information around planning guidance and detour visit: https://buckeyetrail.org/updates/3d091c84-8842-444c-8758-553b3e2"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.119,
+     39.008
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: East Fork State Park (Dry Boot Alternative)",
+    "location": "East Fork State Park (Dry Boot Alternative)",
+    "date": "2026-08-20",
+    "date_ms": 1787270400000,
+    "description": "East Fork Lake trail is subject to seasonal and periodic flooding. A permanent alternate route is available. Planning and detour: https://buckeyetrail.org/updates/3d091c84-8842-444c-8758-553b3e28295a"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -80.491049,
+     40.784192
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: PA State Game Lands \u2014 State Game Land 285",
+    "location": "PA State Game Lands \u2014 State Game Land 285",
+    "date": "2026-08-31",
+    "date_ms": 1788220800000,
+    "description": "Sunday hunting occurs during applicable seasons on State Game Lands. Wear blaze orange while hiking during hunting season. Check PA Game Commission season dates before planning hikes. Submission does not clearly establish a hiking closure."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -80.35136,
+     40.863625
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: PA State Game Lands \u2014 State Game Land 148",
+    "location": "PA State Game Lands \u2014 State Game Land 148",
+    "date": "2026-08-31",
+    "date_ms": 1788220800000,
+    "description": "Sunday hunting occurs during applicable seasons on State Game Lands. Wear blaze orange while hiking during hunting season. Check PA Game Commission season dates before planning hikes. Submission does not clearly establish a hiking closure."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.862854,
+     41.096764
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: PA State Game Lands \u2014 State Game Land 95",
+    "location": "PA State Game Lands \u2014 State Game Land 95",
+    "date": "2026-08-31",
+    "date_ms": 1788220800000,
+    "description": "Sunday hunting occurs during applicable seasons on State Game Lands. Wear blaze orange while hiking during hunting season. Check PA Game Commission season dates before planning hikes. Submission does not clearly establish a hiking closure."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.617808,
+     41.306584
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: PA State Game Lands \u2014 State Game Land 45",
+    "location": "PA State Game Lands \u2014 State Game Land 45",
+    "date": "2026-08-31",
+    "date_ms": 1788220800000,
+    "description": "Sunday hunting occurs during applicable seasons on State Game Lands. Wear blaze orange while hiking during hunting season. Check PA Game Commission season dates before planning hikes. Submission does not clearly establish a hiking closure."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.459192,
+     41.237301
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: PA State Game Lands \u2014 State Game Land 63",
+    "location": "PA State Game Lands \u2014 State Game Land 63",
+    "date": "2026-08-31",
+    "date_ms": 1788220800000,
+    "description": "Sunday hunting occurs during applicable seasons on State Game Lands. Wear blaze orange while hiking during hunting season. Check PA Game Commission season dates before planning hikes. Submission does not clearly establish a hiking closure."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.376795,
+     41.259564
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: PA State Game Lands \u2014 State Game Land 72",
+    "location": "PA State Game Lands \u2014 State Game Land 72",
+    "date": "2026-08-31",
+    "date_ms": 1788220800000,
+    "description": "Sunday hunting occurs during applicable seasons on State Game Lands. Wear blaze orange while hiking during hunting season. Check PA Game Commission season dates before planning hikes. Submission does not clearly establish a hiking closure."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.213288,
+     41.437916
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: PA State Game Lands \u2014 State Game Land 24",
+    "location": "PA State Game Lands \u2014 State Game Land 24",
+    "date": "2026-08-31",
+    "date_ms": 1788220800000,
+    "description": "Sunday hunting occurs during applicable seasons on State Game Lands. Wear blaze orange while hiking during hunting season. Check PA Game Commission season dates before planning hikes. Submission does not clearly establish a hiking closure."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -93.62218,
+     47.22542
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: CR-17 to Tioga Beach",
+    "location": "CR-17 to Tioga Beach",
+    "date": "2026-09-10",
+    "date_ms": 1789084800000,
+    "description": "Due to a private landowner rescinding their permission, the section from CR-17 to Tioga Beach Rd is closed to hiking through.  The Chapter is working on a bypass route.  The NCT is open up to the private land on both sides but continuing on the closed NC"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -101.38157,
+     47.49191
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Garrison Dam",
+    "location": "Garrison Dam",
+    "date": "2026-09-10",
+    "date_ms": 1789084800000,
+    "description": "USACE construction east of the spillway has closed the shoreline to all recreation through Nov. 15, weather permitting. Work includes sloping/riprap along 1,200 ft of east bank and dredging near the bank and spillway. Work resumes in spring 2027."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -101.38157,
+     47.49191
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Garrison Dam in Riverdale, ND",
+    "location": "Garrison Dam in Riverdale, ND",
+    "date": "2026-09-10",
+    "date_ms": 1789084800000,
+    "description": "Shoreline east of Garrison Dam spillway closed to all recreation for bank stabilization and dredging through the construction season (Nov. 15, weather dependent). Work resumes in spring and continues through the 2027 construction season."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.64244,
+     46.37182
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Copper Falls State Park",
+    "location": "Copper Falls State Park",
+    "date": "2026-09-28",
+    "date_ms": 1790640000000,
+    "description": "Doughboys Trail / NCT segment closed Oct. 12-16, 2026, with a detour. Submitted expiration: Oct. 16, 2026. Details: https://dnr.wisconsin.gov/topic/parks/copperfalls/conditions"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.1769,
+     39.4754
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Wayne National Forest - Athens Unit \u2014 eastern endpoint",
+    "location": "Wayne National Forest - Athens Unit \u2014 eastern endpoint",
+    "date": "2026-09-30",
+    "date_ms": 1790812800000,
+    "description": "Storm damage and downed trees affect the Whipple Section. Corridor reopening work is underway; safe passage will take time. Details and detours: https://www.buckeyetrail.org/updates/page-ubrdqc9uughttydq"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.2485,
+     39.4611
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Wayne National Forest - Athens Unit \u2014 western endpoint",
+    "location": "Wayne National Forest - Athens Unit \u2014 western endpoint",
+    "date": "2026-09-30",
+    "date_ms": 1790812800000,
+    "description": "Storm damage and downed trees affect the Whipple Section. Corridor reopening work is underway; safe passage will take time. Details and detours: https://www.buckeyetrail.org/updates/page-ubrdqc9uughttydq"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.4018,
+     46.5752
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Marquette - River Park",
+    "location": "Marquette - River Park",
+    "date": "2026-10-13",
+    "date_ms": 1791936000000,
+    "description": "Follow the temporary reroute north of River Park as development takes place. "
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.36782,
+     42.38289
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: M-89 to C Ave",
+    "location": "M-89 to C Ave",
+    "date": "2026-10-14",
+    "date_ms": 1792022400000,
+    "description": "The trail between M-89 and C Ave is reopened after completion of logging operations. The trail is cleared but be prepared for occasional challenging hiking as the trail tread in the sandy soil was impacted by the logging machinery"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -80.132,
+     40.957
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Moraine State Park \u2014 Burnside Road",
+    "location": "Moraine State Park \u2014 Burnside Road",
+    "date": "2026-10-21",
+    "date_ms": 1792627200000,
+    "description": "NCT closed between Muddy Creek Dam and the Route 422 bridge for park improvements. Eastbound detour: Burnside Rd north onto West Park Rd (0.4 mi), then right onto North Shore Dr toward McDanels Launch to rejoin NCT. Expected through year end."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -80.126388,
+     40.935795
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Moraine State Park \u2014 McDanels Parking",
+    "location": "Moraine State Park \u2014 McDanels Parking",
+    "date": "2026-10-21",
+    "date_ms": 1792627200000,
+    "description": "NCT closed between Muddy Creek Dam and the Route 422 bridge for park improvements. Eastbound detour: Burnside Rd north onto West Park Rd (0.4 mi), then right onto North Shore Dr toward McDanels Launch to rejoin NCT. Expected through year end."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.45097,
+     42.69144
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Middleville - Paul Henry Thornapple Trail",
+    "location": "Middleville - Paul Henry Thornapple Trail",
+    "date": "2026-10-25",
+    "date_ms": 1792972800000,
+    "description": "Follow the bypass route between Main St and McCann Rd during the month of November due to the hunting season."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -91.964355,
+     46.255836
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Moose River Trailhead, Douglas County",
+    "location": "Moose River Trailhead, Douglas County",
+    "date": "2026-10-25",
+    "date_ms": 1792972800000,
+    "description": "S. Mail Rd access from the south is closed for bridge replacement. Approach from Douglas County M to the north. Trailhead parking is blocked; park along the road. Completion expected Jan. 1, 2027."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.75218,
+     43.0697
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Mt. Pleasant Cemetery",
+    "location": "Mt. Pleasant Cemetery, NY-23",
+    "date": "2026-10-26",
+    "date_ms": 1793059200000,
+    "description": "Trail closed at Mt. Pleasant Cemetery due to culvert washout. \nCurrent road walk: Follow South Peterboro Street to Oxbow Road (2 miles). Cottons Road to Nelson Road (0.9 miles). Pick up trail at Leh"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.66417,
+     43.32678
+    ]
+   },
+   "properties": {
+    "title": "Southern Newaygo County",
+    "location": "Southern Newaygo County",
+    "date": "2026-11-08",
+    "date_ms": 1794182400000,
+    "description": "Off-road trail between Locust Ave and 128th St is closed during firearm season, November 15\u201330. Please respect private property owners and use the roadwalk along 120th St and Pear Ave."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.40383,
+     42.42536
+    ]
+   },
+   "properties": {
+    "title": "South of Sheffield Rd",
+    "location": "Southern Barry County: South of Sheffield Rd",
+    "date": "2026-11-08",
+    "date_ms": 1794182400000,
+    "description": "The NCT on private property south of Sheffield Rd is closed during firearm season, November 15\u201330. Follow Sheffield Rd to connect with the existing roadwalk."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -78.925,
+     41.965
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Tracy Run Wildfire",
+    "location": "Tracy Run Wildfire",
+    "date": "2026-11-09",
+    "date_ms": 1794268800000,
+    "description": "Please avoid the North Country Trail around the Tracy Ridge System of Allegheny National Forest due to a recent wildfire. The fire has been contained. Please allow time for damage assessment and clean-up. Planning an alternate hike is advised."
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.341064,
+     47.156067
+    ]
+   },
+   "properties": {
+    "title": "Trail Alert: Anchor Matson Trailhead to Anchor Hill Trailhead",
+    "location": "Anchor Matson Trailhead to Anchor Hill Trailhead",
+    "date": "2026-11-15",
+    "date_ms": 1794787200000,
+    "description": "The North Country Trail between Anchor Matson Trailhead and Anchor Hill Trailhead is closed. The trail is rerouted onto Anchor Matson Road and Anchor Hill Road."
+   }
+  }
+ ]
+}

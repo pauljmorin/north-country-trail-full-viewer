@@ -1,0 +1,1762 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -101.45349,
+     47.51963
+    ]
+   },
+   "properties": {
+    "kind": "terminus",
+    "name": "Western terminus \u2014 Lake Sakakawea State Park",
+    "chapter_code": "FLY",
+    "chapter_name": "Central Flyway",
+    "state": "ND",
+    "chainage_mi": 0.0
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -101.38218,
+     47.49437
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "FLY",
+    "chapter_from_name": "Central Flyway",
+    "chapter_to_code": "None",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "ND",
+    "state_to": "ND",
+    "chainage_mi": 8.09
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -101.35622,
+     47.51109
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "None",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "FLY",
+    "chapter_to_name": "Central Flyway",
+    "state_from": "ND",
+    "state_to": "ND",
+    "chainage_mi": 10.44
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -100.49652,
+     47.4808
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "FLY",
+    "chapter_from_name": "Central Flyway",
+    "chapter_to_code": "None",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "ND",
+    "state_to": "ND",
+    "chainage_mi": 95.77
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -100.43814,
+     47.53354
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "None",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "FLY",
+    "chapter_to_name": "Central Flyway",
+    "state_from": "ND",
+    "state_to": "ND",
+    "chainage_mi": 102.06
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -99.93837,
+     47.69025
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "FLY",
+    "chapter_from_name": "Central Flyway",
+    "chapter_to_code": "LON",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "ND",
+    "state_to": "ND",
+    "chainage_mi": 142.49
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -99.91852,
+     47.70302
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "LON",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "None",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "ND",
+    "state_to": "ND",
+    "chainage_mi": 143.97
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -97.97565,
+     47.3445
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "None",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "SRV",
+    "chapter_to_name": "Sheyenne River Valley",
+    "state_from": "ND",
+    "state_to": "ND",
+    "chainage_mi": 262.11
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -97.67746,
+     46.43308
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "SRV",
+    "chapter_from_name": "Sheyenne River Valley",
+    "chapter_to_code": "DPC",
+    "chapter_to_name": "Dakota Prairie",
+    "state_from": "ND",
+    "state_to": "ND",
+    "chainage_mi": 370.51
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -96.71633,
+     46.44428
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "DPC",
+    "chapter_from_name": "Dakota Prairie",
+    "chapter_to_code": "MWP",
+    "chapter_to_name": "Minnesota Waters and Prairie",
+    "state_from": "ND",
+    "state_to": "ND",
+    "chainage_mi": 454.23
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.71913,
+     46.71844
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "MWP",
+    "chapter_from_name": "Minnesota Waters and Prairie",
+    "chapter_to_code": "LLC",
+    "chapter_to_name": "Laurentian Lakes",
+    "state_from": "MN",
+    "state_to": "MN",
+    "chainage_mi": 548.51
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -95.21907,
+     47.14941
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "LLC",
+    "chapter_from_name": "Laurentian Lakes",
+    "chapter_to_code": "ITM",
+    "chapter_to_name": "Itasca Moraine",
+    "state_from": "MN",
+    "state_to": "MN",
+    "chainage_mi": 619.91
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -94.87717,
+     47.15691
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "ITM",
+    "chapter_from_name": "Itasca Moraine",
+    "chapter_to_code": "LLC",
+    "chapter_to_name": "Laurentian Lakes",
+    "state_from": "MN",
+    "state_to": "MN",
+    "chainage_mi": 643.8
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -94.87702,
+     47.15694
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "LLC",
+    "chapter_from_name": "Laurentian Lakes",
+    "chapter_to_code": "ITM",
+    "chapter_to_name": "Itasca Moraine",
+    "state_from": "MN",
+    "state_to": "MN",
+    "chainage_mi": 643.81
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -94.25017,
+     47.02153
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "ITM",
+    "chapter_from_name": "Itasca Moraine",
+    "chapter_to_code": "STN",
+    "chapter_to_name": "Star of the North",
+    "state_from": "MN",
+    "state_to": "MN",
+    "chainage_mi": 696.2
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -94.10596,
+     47.04414
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "STN",
+    "chapter_from_name": "Star of the North",
+    "chapter_to_code": "ARW",
+    "chapter_to_name": "Arrowhead",
+    "state_from": "MN",
+    "state_to": "MN",
+    "chainage_mi": 706.42
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -92.09414,
+     47.83341
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "ARW",
+    "chapter_from_name": "Arrowhead",
+    "chapter_to_code": "ELY",
+    "chapter_to_name": "Ely Northwoods",
+    "state_from": "MN",
+    "state_to": "MN",
+    "chainage_mi": 873.39
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -91.75553,
+     47.93177
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "ELY",
+    "chapter_from_name": "Ely Northwoods",
+    "chapter_to_code": "KEK",
+    "chapter_to_name": "Kekekabic Trail",
+    "state_from": "MN",
+    "state_to": "MN",
+    "chainage_mi": 893.22
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.82537,
+     48.09174
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "KEK",
+    "chapter_from_name": "Kekekabic Trail",
+    "chapter_to_code": "BRT",
+    "chapter_to_name": "Border Route Trail",
+    "state_from": "MN",
+    "state_to": "MN",
+    "chainage_mi": 947.17
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -89.93348,
+     47.98652
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "BRT",
+    "chapter_from_name": "Border Route Trail",
+    "chapter_to_code": "SHTA",
+    "chapter_to_name": "Superior Hiking Trail Association",
+    "state_from": "MN",
+    "state_to": "MN",
+    "chainage_mi": 1012.05
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -92.29204,
+     46.60775
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "SHTA",
+    "chapter_from_name": "Superior Hiking Trail Association",
+    "chapter_to_code": "BSC",
+    "chapter_to_name": "Brule-St. Croix",
+    "state_from": "MN",
+    "state_to": "MN",
+    "chainage_mi": 1310.93
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -92.29045,
+     46.59921
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "BSC",
+    "chapter_from_name": "Brule-St. Croix",
+    "chapter_to_code": "None",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "WI",
+    "state_to": "WI",
+    "chainage_mi": 1311.66
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -92.29167,
+     46.59538
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "None",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "BSC",
+    "chapter_to_name": "Brule-St. Croix",
+    "state_from": "WI",
+    "state_to": "MN",
+    "chainage_mi": 1311.95
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -92.27802,
+     46.56465
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "BSC",
+    "chapter_from_name": "Brule-St. Croix",
+    "chapter_to_code": "None",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "WI",
+    "state_to": "WI",
+    "chainage_mi": 1316.14
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -92.27638,
+     46.56254
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "None",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "BSC",
+    "chapter_to_name": "Brule-St. Croix",
+    "state_from": "WI",
+    "state_to": "WI",
+    "chainage_mi": 1316.47
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -91.42728,
+     46.49334
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "BSC",
+    "chapter_from_name": "Brule-St. Croix",
+    "chapter_to_code": "CHE",
+    "chapter_to_name": "Chequamegon",
+    "state_from": "WI",
+    "state_to": "WI",
+    "chainage_mi": 1417.13
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.64646,
+     46.36736
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "CHE",
+    "chapter_from_name": "Chequamegon",
+    "chapter_to_code": "HTG",
+    "chapter_to_name": "Heritage",
+    "state_from": "WI",
+    "state_to": "WI",
+    "chainage_mi": 1484.86
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -90.41428,
+     46.55733
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "HTG",
+    "chapter_from_name": "Heritage",
+    "chapter_to_code": "NMK",
+    "chapter_to_name": "Ni-Miikanaake",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 1526.77
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -89.59088,
+     46.69279
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "NMK",
+    "chapter_from_name": "Ni-Miikanaake",
+    "chapter_to_code": "PWC",
+    "chapter_to_name": "Peter Wolfe",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 1603.41
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -89.20921,
+     46.68812
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "PWC",
+    "chapter_from_name": "Peter Wolfe",
+    "chapter_to_code": "None",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 1639.75
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -89.22403,
+     46.67961
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "None",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "PWC",
+    "chapter_to_name": "Peter Wolfe",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 1640.72
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -88.22806,
+     46.60906
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "PWC",
+    "chapter_from_name": "Peter Wolfe",
+    "chapter_to_code": "MAC",
+    "chapter_to_name": "Marquette Area",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 1724.16
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.4877,
+     46.60043
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "MAC",
+    "chapter_from_name": "Marquette Area",
+    "chapter_to_code": "None",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 1787.44
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.4882,
+     46.59848
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "None",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "MAC",
+    "chapter_to_name": "Marquette Area",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 1787.6
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.48682,
+     46.59552
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "MAC",
+    "chapter_from_name": "Marquette Area",
+    "chapter_to_code": "None",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 1787.83
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -87.48671,
+     46.59539
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "None",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "MAC",
+    "chapter_to_name": "Marquette Area",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 1787.84
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -86.91518,
+     46.38952
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "MAC",
+    "chapter_from_name": "Marquette Area",
+    "chapter_to_code": "SSC",
+    "chapter_to_name": "Superior Shoreline",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 1834.33
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.42272,
+     46.69852
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "SSC",
+    "chapter_from_name": "Superior Shoreline",
+    "chapter_to_code": "HSS",
+    "chapter_to_name": "Hiawatha Shore-to-Shore",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 1941.05
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.73207,
+     45.7878
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "HSS",
+    "chapter_from_name": "Hiawatha Shore-to-Shore",
+    "chapter_to_code": "HRB",
+    "chapter_to_name": "Harbor Springs",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 2079.45
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.87409,
+     45.44282
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "HRB",
+    "chapter_from_name": "Harbor Springs",
+    "chapter_to_code": "J45",
+    "chapter_to_name": "Jordan Valley 45\u00b0",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 2128.77
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.93235,
+     44.85145
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "J45",
+    "chapter_from_name": "Jordan Valley 45\u00b0",
+    "chapter_to_code": "GTC",
+    "chapter_to_name": "Grand Traverse",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 2208.3
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.1158,
+     44.76793
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "GTC",
+    "chapter_from_name": "Grand Traverse",
+    "chapter_to_code": "GTR",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 2226.56
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.12298,
+     44.76554
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "GTR",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "GTC",
+    "chapter_to_name": "Grand Traverse",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 2227.17
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.29764,
+     44.70016
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "GTC",
+    "chapter_from_name": "Grand Traverse",
+    "chapter_to_code": "GTR",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 2239.48
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.29897,
+     44.69997
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "GTR",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "GTC",
+    "chapter_to_name": "Grand Traverse",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 2239.58
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.37379,
+     44.68876
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "GTC",
+    "chapter_from_name": "Grand Traverse",
+    "chapter_to_code": "GTR",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 2248.24
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.38697,
+     44.68441
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "GTR",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "GTC",
+    "chapter_to_name": "Grand Traverse",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 2249.02
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.46447,
+     44.502
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "GTC",
+    "chapter_from_name": "Grand Traverse",
+    "chapter_to_code": "GTR",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 2281.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.46542,
+     44.50224
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "GTR",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "GTC",
+    "chapter_to_name": "Grand Traverse",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 2281.18
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.82508,
+     44.37273
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "GTC",
+    "chapter_from_name": "Grand Traverse",
+    "chapter_to_code": "SPW",
+    "chapter_to_name": "Spirit of the Woods",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 2314.96
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.91343,
+     43.81455
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "SPW",
+    "chapter_from_name": "Spirit of the Woods",
+    "chapter_to_code": "WMI",
+    "chapter_to_name": "Western Michigan",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 2394.27
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -85.35884,
+     42.76953
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "WMI",
+    "chapter_from_name": "Western Michigan",
+    "chapter_to_code": "CND",
+    "chapter_to_name": "Chief Noonday",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 2537.64
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.77821,
+     42.07162
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "CND",
+    "chapter_from_name": "Chief Noonday",
+    "chapter_to_code": "BAW",
+    "chapter_to_name": "Chief Baw Beese",
+    "state_from": "MI",
+    "state_to": "MI",
+    "chainage_mi": 2654.27
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -84.43423,
+     41.58304
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "BAW",
+    "chapter_from_name": "Chief Baw Beese",
+    "chapter_to_code": "NORTA",
+    "chapter_to_name": "Northwestern Ohio Rail-to-Trails Assn",
+    "state_from": "OH",
+    "state_to": "OH",
+    "chainage_mi": 2704.93
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -83.73579,
+     41.48682
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "NORTA",
+    "chapter_from_name": "Northwestern Ohio Rail-to-Trails Assn",
+    "chapter_to_code": "BTA",
+    "chapter_to_name": "Buckeye Trail Association",
+    "state_from": "OH",
+    "state_to": "OH",
+    "chainage_mi": 2748.92
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.50734,
+     39.77579
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "BTA",
+    "chapter_from_name": "Buckeye Trail Association",
+    "chapter_to_code": "None",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "OH",
+    "state_to": "OH",
+    "chainage_mi": 3557.56
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.54707,
+     39.78848
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "None",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "BTA",
+    "chapter_to_name": "Buckeye Trail Association",
+    "state_from": "OH",
+    "state_to": "OH",
+    "chainage_mi": 3561.51
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.5433,
+     39.81175
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "BTA",
+    "chapter_from_name": "Buckeye Trail Association",
+    "chapter_to_code": "None",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "OH",
+    "state_to": "OH",
+    "chainage_mi": 3564.15
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.54702,
+     39.82612
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "None",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "BTA",
+    "chapter_to_name": "Buckeye Trail Association",
+    "state_from": "OH",
+    "state_to": "OH",
+    "chainage_mi": 3565.35
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -81.42846,
+     40.60834
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "BTA",
+    "chapter_from_name": "Buckeye Trail Association",
+    "chapter_to_code": "WAM",
+    "chapter_to_name": "Wampum",
+    "state_from": "OH",
+    "state_to": "OH",
+    "chainage_mi": 3684.61
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -80.1633,
+     40.95784
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "WAM",
+    "chapter_from_name": "Wampum",
+    "chapter_to_code": "BUT",
+    "chapter_to_name": "Butler County",
+    "state_from": "PA",
+    "state_to": "PA",
+    "chainage_mi": 3809.37
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.86579,
+     41.09291
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "BUT",
+    "chapter_from_name": "Butler County",
+    "chapter_to_code": "CLA",
+    "chapter_to_name": "Clarion County",
+    "state_from": "PA",
+    "state_to": "PA",
+    "chainage_mi": 3843.69
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.86363,
+     41.09181
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "CLA",
+    "chapter_from_name": "Clarion County",
+    "chapter_to_code": "BUT",
+    "chapter_to_name": "Butler County",
+    "state_from": "PA",
+    "state_to": "PA",
+    "chainage_mi": 3843.9
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.69035,
+     41.07955
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "BUT",
+    "chapter_from_name": "Butler County",
+    "chapter_to_code": "CLA",
+    "chapter_to_name": "Clarion County",
+    "state_from": "PA",
+    "state_to": "PA",
+    "chainage_mi": 3858.05
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.67972,
+     41.14069
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "CLA",
+    "chapter_from_name": "Clarion County",
+    "chapter_to_code": "None",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "PA",
+    "state_to": "PA",
+    "chainage_mi": 3863.16
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.70817,
+     41.17634
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "None",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "CLA",
+    "chapter_to_name": "Clarion County",
+    "state_from": "PA",
+    "state_to": "PA",
+    "chainage_mi": 3868.16
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -79.19934,
+     41.46974
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "CLA",
+    "chapter_from_name": "Clarion County",
+    "chapter_to_code": "ANF",
+    "chapter_to_name": "Allegheny National Forest",
+    "state_from": "PA",
+    "state_to": "PA",
+    "chainage_mi": 3958.25
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -78.8838,
+     41.75923
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "ANF",
+    "chapter_from_name": "Allegheny National Forest",
+    "chapter_to_code": "None",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "PA",
+    "state_to": "PA",
+    "chainage_mi": 4020.7
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -78.88456,
+     41.76137
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "None",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "ANF",
+    "chapter_to_name": "Allegheny National Forest",
+    "state_from": "PA",
+    "state_to": "PA",
+    "chainage_mi": 4020.92
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -78.92396,
+     41.95853
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "ANF",
+    "chapter_from_name": "Allegheny National Forest",
+    "chapter_to_code": "None",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "PA",
+    "state_to": "PA",
+    "chainage_mi": 4046.18
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -78.92023,
+     41.96157
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "None",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "ANF",
+    "chapter_to_name": "Allegheny National Forest",
+    "state_from": "PA",
+    "state_to": "PA",
+    "chainage_mi": 4046.71
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -78.89821,
+     41.99786
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "ANF",
+    "chapter_from_name": "Allegheny National Forest",
+    "chapter_to_code": "FLTC",
+    "chapter_to_name": "Finger Lakes Trail Conference",
+    "state_from": "PA",
+    "state_to": "NY",
+    "chainage_mi": 4051.46
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.91472,
+     42.70744
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "FLTC",
+    "chapter_from_name": "Finger Lakes Trail Conference",
+    "chapter_to_code": "ADK-ON",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "NY",
+    "state_to": "NY",
+    "chainage_mi": 4441.71
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.80959,
+     42.86603
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "ADK-ON",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "CNY",
+    "chapter_to_name": "Central New York",
+    "state_from": "NY",
+    "state_to": "NY",
+    "chainage_mi": 4480.13
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.34122,
+     43.39716
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "CNY",
+    "chapter_from_name": "Central New York",
+    "chapter_to_code": "Central NY",
+    "chapter_to_name": "Central New York",
+    "state_from": "NY",
+    "state_to": "NY",
+    "chainage_mi": 4551.08
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.34275,
+     43.40224
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "Central NY",
+    "chapter_from_name": "Central New York",
+    "chapter_to_code": "CNY",
+    "chapter_to_name": "Central New York",
+    "state_from": "NY",
+    "state_to": "NY",
+    "chainage_mi": 4552.1
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.32619,
+     43.48094
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "CNY",
+    "chapter_from_name": "Central New York",
+    "chapter_to_code": "None",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "NY",
+    "state_to": "NY",
+    "chainage_mi": 4558.57
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.328,
+     43.48265
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "None",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "CNY",
+    "chapter_to_name": "Central New York",
+    "state_from": "NY",
+    "state_to": "NY",
+    "chainage_mi": 4558.76
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.21071,
+     43.43953
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "CNY",
+    "chapter_from_name": "Central New York",
+    "chapter_to_code": "ADK",
+    "chapter_to_name": "Adirondack Mountain Club",
+    "state_from": "NY",
+    "state_to": "NY",
+    "chainage_mi": 4568.43
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.20143,
+     43.43724
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "ADK",
+    "chapter_from_name": "Adirondack Mountain Club",
+    "chapter_to_code": "Central NY",
+    "chapter_to_name": "Central New York",
+    "state_from": "NY",
+    "state_to": "NY",
+    "chainage_mi": 4569.23
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -75.18088,
+     43.43403
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "Central NY",
+    "chapter_from_name": "Central New York",
+    "chapter_to_code": "ADK",
+    "chapter_to_name": "Adirondack Mountain Club",
+    "state_from": "NY",
+    "state_to": "NY",
+    "chainage_mi": 4570.68
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.42313,
+     44.03296
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "ADK",
+    "chapter_from_name": "Adirondack Mountain Club",
+    "chapter_to_code": "MALT",
+    "chapter_to_name": "Middlebury Area Land Trust",
+    "state_from": "VT",
+    "state_to": "VT",
+    "chainage_mi": 4756.18
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.41841,
+     44.03618
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "MALT",
+    "chapter_from_name": "Middlebury Area Land Trust",
+    "chapter_to_code": "None",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "VT",
+    "state_to": "VT",
+    "chainage_mi": 4756.54
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.25229,
+     44.04679
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "None",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "MALT",
+    "chapter_to_name": "Middlebury Area Land Trust",
+    "state_from": "VT",
+    "state_to": "VT",
+    "chainage_mi": 4768.13
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.14826,
+     43.99714
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "MALT",
+    "chapter_from_name": "Middlebury Area Land Trust",
+    "chapter_to_code": "None",
+    "chapter_to_name": "?? UNMAPPED CODE ??",
+    "state_from": "VT",
+    "state_to": "VT",
+    "chainage_mi": 4783.02
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.14389,
+     43.9852
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "None",
+    "chapter_from_name": "?? UNMAPPED CODE ??",
+    "chapter_to_code": "MALT",
+    "chapter_to_name": "Middlebury Area Land Trust",
+    "state_from": "VT",
+    "state_to": "VT",
+    "chainage_mi": 4784.22
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -73.08566,
+     43.97002
+    ]
+   },
+   "properties": {
+    "kind": "chapter-boundary",
+    "chapter_from_code": "MALT",
+    "chapter_from_name": "Middlebury Area Land Trust",
+    "chapter_to_code": "GMC",
+    "chapter_to_name": "Green Mountain Club",
+    "state_from": "VT",
+    "state_to": "VT",
+    "chainage_mi": 4788.77
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     -72.83922,
+     43.67478
+    ]
+   },
+   "properties": {
+    "kind": "terminus",
+    "name": "Eastern terminus \u2014 Appalachian Trail junction, Green Mountain National Forest",
+    "chapter_code": "GMC",
+    "chapter_name": "Green Mountain Club",
+    "state": "VT",
+    "chainage_mi": 4826.21,
+    "note": "Brief labels the eastern terminus Crown Point / Lake Champlain bridge; the drawn centerline continues past Crown Point (the ADK -> MALT boundary in this layer) through Vermont to this point, the Appalachian Trail junction in the Green Mountain National Forest \u2014 the eastern terminus stated on the GMC row of ncta-chapter-extents-2026-11-23.md and the easternmost point of the data."
+   }
+  }
+ ]
+}

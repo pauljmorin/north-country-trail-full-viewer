@@ -1,0 +1,403 @@
+[
+ {
+  "code": "FLY",
+  "name": "Central Flyway",
+  "states": "ND",
+  "west": "Western terminus of the trail, Lake Sakakawea State Park",
+  "east": "Eastern end of Lonetree Wildlife Management Area",
+  "miles": 139.64,
+  "url": "https://northcountrytrail.org/trail/north-dakota/fly/",
+  "affiliate": false
+ },
+ {
+  "code": "SRV",
+  "name": "Sheyenne River Valley",
+  "states": "ND",
+  "west": "North end of Lake Ashtabula",
+  "east": "Eastern boundary of Sheyenne State Forest",
+  "miles": 115.26,
+  "url": "https://northcountrytrail.org/trail/north-dakota/srv/",
+  "affiliate": false
+ },
+ {
+  "code": "DPC",
+  "name": "Dakota Prairie",
+  "states": "ND",
+  "west": "Sheyenne State Forest",
+  "east": "North Dakota–Minnesota state line at Fort Abercrombie State Park",
+  "miles": 83.73,
+  "url": "https://northcountrytrail.org/trail/north-dakota/dpc/",
+  "affiliate": false
+ },
+ {
+  "code": "MWP",
+  "name": "Minnesota Waters and Prairie",
+  "states": "MN (0.01 ND)",
+  "west": "North Dakota–Minnesota state line at Fort Abercrombie State Park",
+  "east": "Otter Tail–Becker county line, southwest of Frazee",
+  "miles": 95.05,
+  "url": "https://northcountrytrail.org/trail/minnesota/mwp/",
+  "affiliate": false
+ },
+ {
+  "code": "LLC",
+  "name": "Laurentian Lakes",
+  "states": "MN",
+  "west": "Otter Tail–Becker county line, southwest of Frazee",
+  "east": "Itasca State Park",
+  "miles": 71.42,
+  "url": "https://northcountrytrail.org/trail/minnesota/llc/",
+  "affiliate": false
+ },
+ {
+  "code": "ITM",
+  "name": "Itasca Moraine",
+  "states": "MN",
+  "west": "Itasca State Park",
+  "east": "Minnesota Highway 84",
+  "miles": 78.31,
+  "url": "https://northcountrytrail.org/trail/minnesota/itm/",
+  "affiliate": false
+ },
+ {
+  "code": "STN",
+  "name": "Star of the North",
+  "states": "MN",
+  "west": "Minnesota 84",
+  "east": "Highway 6, northeast of Remer",
+  "miles": 10.21,
+  "url": "https://northcountrytrail.org/trail/minnesota/stn/",
+  "affiliate": false
+ },
+ {
+  "code": "ARW",
+  "name": "Arrowhead",
+  "states": "MN",
+  "west": "Minnesota Highway 6",
+  "east": "Bear Head Lake State Park",
+  "miles": 178.66,
+  "url": "https://northcountrytrail.org/trail/minnesota/arw/",
+  "affiliate": false
+ },
+ {
+  "code": "ELY",
+  "name": "Ely Northwoods",
+  "states": "MN",
+  "west": "Bear Head Lake State Park",
+  "east": "Kawishiwi Falls, Superior National Forest",
+  "miles": 19.83,
+  "url": "https://northcountrytrail.org/trail/minnesota/ely/",
+  "affiliate": false
+ },
+ {
+  "code": "KEK",
+  "name": "Kekekabic Trail",
+  "states": "MN",
+  "west": "Kawishiwi Falls, Superior National Forest",
+  "east": "Gunflint Trail",
+  "miles": 53.95,
+  "url": "https://northcountrytrail.org/trail/minnesota/kek/",
+  "affiliate": false
+ },
+ {
+  "code": "BRT",
+  "name": "Border Route Trail Association",
+  "states": "MN",
+  "west": "Gunflint Trail (connects to Kekekabic Trail)",
+  "east": "Otter Lake Road / Swamp River, at the northern terminus of the Superior Hiking Trail (270° Overlook)",
+  "miles": 64.88,
+  "url": "https://www.borderroutetrail.org/about-the-trail",
+  "affiliate": true
+ },
+ {
+  "code": "SHTA",
+  "name": "Superior Hiking Trail Association",
+  "states": "MN",
+  "west": "270° Overlook near the Canada–US border",
+  "east": "Minnesota–Wisconsin border, Jay Cooke State Park",
+  "miles": 300.35,
+  "url": "https://en.wikipedia.org/wiki/Superior_Hiking_Trail",
+  "affiliate": true
+ },
+ {
+  "code": "BSC",
+  "name": "Brule-St. Croix",
+  "states": "WI (2.34 MN)",
+  "west": "Mouth of the Minnesota–Wisconsin state line (St. Louis River mouth; NCTA's phrasing, see gaps)",
+  "east": "Bayfield County Road A",
+  "miles": 105.66,
+  "url": "https://northcountrytrail.org/trail/wisconsin/bsc/",
+  "affiliate": false
+ },
+ {
+  "code": "CHE",
+  "name": "Chequamegon",
+  "states": "WI",
+  "west": "Bayfield County Road A",
+  "east": "Sandstone Ledges Spur Trail, Copper Falls State Park",
+  "miles": 67.74,
+  "url": "https://northcountrytrail.org/trail/wisconsin/che/",
+  "affiliate": false
+ },
+ {
+  "code": "HTG",
+  "name": "Heritage",
+  "states": "WI (0.01 MI)",
+  "west": "Sandstone Ledges Spur, Copper Falls State Park",
+  "east": "Wisconsin–Michigan state line",
+  "miles": 41.95,
+  "url": "https://northcountrytrail.org/trail/wisconsin/htg/",
+  "affiliate": false
+ },
+ {
+  "code": "NMK",
+  "name": "Ni-Miikanaake",
+  "states": "MI",
+  "west": "Wisconsin–Michigan state line",
+  "east": "M-64, Ottawa National Forest",
+  "miles": 81.65,
+  "url": "https://northcountrytrail.org/trail/michigan/nmk/",
+  "affiliate": false
+ },
+ {
+  "code": "PWC",
+  "name": "Peter Wolfe",
+  "states": "MI",
+  "west": "M-64, Ottawa National Forest",
+  "east": "Long Lake, west of Craig Lake State Park",
+  "miles": 119.76,
+  "url": "https://northcountrytrail.org/trail/michigan/pwc/",
+  "affiliate": false
+ },
+ {
+  "code": "MAC",
+  "name": "Marquette Area",
+  "states": "MI",
+  "west": "Long Lake, west of Craig Lake State Park",
+  "east": "Rock River Road, Alger County",
+  "miles": 110.28,
+  "url": "https://northcountrytrail.org/trail/michigan/mac/",
+  "affiliate": false
+ },
+ {
+  "code": "SSC",
+  "name": "Superior Shoreline",
+  "states": "MI",
+  "west": "Rock River Road, Alger County",
+  "east": "Mouth of the Two Hearted River",
+  "miles": 109.68,
+  "url": "https://northcountrytrail.org/trail/michigan/ssc/",
+  "affiliate": false
+ },
+ {
+  "code": "HSS",
+  "name": "Hiawatha Shore-to-Shore",
+  "states": "MI",
+  "west": "Mouth of the Two Hearted River",
+  "east": "South end of the Mackinac Bridge",
+  "miles": 138.61,
+  "url": "https://northcountrytrail.org/trail/michigan/hss/",
+  "affiliate": false
+ },
+ {
+  "code": "HRB",
+  "name": "Harbor Springs",
+  "states": "MI",
+  "west": "Mackinaw City trailhead",
+  "east": "Kipp Road, east of Harbor Springs",
+  "miles": 49.31,
+  "url": "https://northcountrytrail.org/trail/michigan/hrb/",
+  "affiliate": false
+ },
+ {
+  "code": "J45",
+  "name": "Jordan Valley 45°",
+  "states": "MI",
+  "west": "Kipp Road, east of Harbor Springs",
+  "east": "Starvation Lake Road, southeast of Mancelona",
+  "miles": 79.67,
+  "url": "https://northcountrytrail.org/trail/michigan/j45/",
+  "affiliate": false
+ },
+ {
+  "code": "GTC",
+  "name": "Grand Traverse",
+  "states": "MI",
+  "west": "Starvation Lake Road, southeast of Mancelona",
+  "east": "Wexford–Manistee county line at Hodenpyl Dam Pond",
+  "miles": 105.11,
+  "url": "https://northcountrytrail.org/trail/michigan/gtc/",
+  "affiliate": false
+ },
+ {
+  "code": "SPW",
+  "name": "Spirit of the Woods",
+  "states": "MI",
+  "west": "Wexford–Manistee county line at Hodenpyl Dam Pond",
+  "east": "Lake–Newaygo county line west of M-37",
+  "miles": 79.3,
+  "url": "https://northcountrytrail.org/trail/michigan/spw/",
+  "affiliate": false
+ },
+ {
+  "code": "WMI",
+  "name": "Western Michigan",
+  "states": "MI",
+  "west": "Lake–Newaygo county line west of M-37",
+  "east": "Kent–Barry county line, northeast of Middleville",
+  "miles": 144.36,
+  "url": "https://northcountrytrail.org/trail/michigan/wmi/",
+  "affiliate": false
+ },
+ {
+  "code": "CND",
+  "name": "Chief Noonday",
+  "states": "MI",
+  "west": "Kent–Barry county line, northeast of Middleville",
+  "east": "Calhoun–Hillsdale county line",
+  "miles": 117.86,
+  "url": "https://northcountrytrail.org/trail/michigan/cnd/",
+  "affiliate": false
+ },
+ {
+  "code": "BAW",
+  "name": "Chief Baw Beese",
+  "states": "MI (9.28 OH)",
+  "west": "Calhoun–Hillsdale county line",
+  "east": "Wabash Cannonball Trail, Ohio",
+  "miles": 51.92,
+  "url": "https://northcountrytrail.org/trail/michigan/baw/",
+  "affiliate": false
+ },
+ {
+  "code": "NORTA",
+  "name": "Northwestern Ohio Rails-to-Trails Association",
+  "states": "OH",
+  "west": "Wabash Cannonball Trail (North Fork), at the Michigan line",
+  "east": "Junction with the Buckeye Trail (junction not precisely sourced)",
+  "miles": 44.14,
+  "url": null,
+  "affiliate": true
+ },
+ {
+  "code": "BTA",
+  "name": "Buckeye Trail Association",
+  "states": "OH",
+  "west": "Junction with the Wabash Cannonball Trail",
+  "east": "Zoar, Ohio (where the Wampum Chapter takes over)",
+  "miles": 932.66,
+  "url": "https://en.wikipedia.org/wiki/North_Country_Trail",
+  "affiliate": true
+ },
+ {
+  "code": "WAM",
+  "name": "Wampum",
+  "states": "OH 81.44, PA 43.59",
+  "west": "Zoar, Ohio",
+  "east": "Lawrence–Butler county line, east of McConnells Mill State Park, PA",
+  "miles": 125.04,
+  "url": "https://northcountrytrail.org/wam",
+  "affiliate": false
+ },
+ {
+  "code": "BUT",
+  "name": "Butler County",
+  "states": "PA",
+  "west": "Lawrence–Butler county line, east of McConnells Mill State Park",
+  "east": "Armstrong–Clarion county line at the Allegheny River (Parker)",
+  "miles": 48.42,
+  "url": "https://northcountrytrail.org/but",
+  "affiliate": false
+ },
+ {
+  "code": "CLA",
+  "name": "Clarion County",
+  "states": "PA",
+  "west": "Armstrong–Clarion county line at the Allegheny River",
+  "east": "Salmon Creek, Allegheny National Forest",
+  "miles": 95.74,
+  "url": "https://northcountrytrail.org/cla",
+  "affiliate": false
+ },
+ {
+  "code": "ANF",
+  "name": "Allegheny National Forest",
+  "states": "PA",
+  "west": "Southern boundary of the Allegheny National Forest (Salmon Creek)",
+  "east": "Pennsylvania–New York state line",
+  "miles": 92.46,
+  "url": "https://northcountrytrail.org/anf",
+  "affiliate": false
+ },
+ {
+  "code": "FLTC",
+  "name": "Finger Lakes Trail Conference",
+  "states": "NY",
+  "west": "Pennsylvania–New York state line, Allegany State Park",
+  "east": "Central junction near Cuyler, NY (NCT leaves the Finger Lakes Trail for the Adirondacks)",
+  "miles": 390.63,
+  "url": "https://www.iloveny.com/listing/north-country-national-scenic-trail-(ncnst)/134158/",
+  "affiliate": true
+ },
+ {
+  "code": "ADK-ON",
+  "name": "Adirondack Mountain Club – Onondaga Chapter",
+  "states": "NY",
+  "west": "Central junction near Cuyler, NY (Onondaga Trail extension of the Finger Lakes Trail)",
+  "east": "End of the Onondaga Trail (northern terminus of the Link Trail area; exact point not stated)",
+  "miles": 38.45,
+  "url": "https://adk-on.org/stewardship/nct/",
+  "affiliate": true
+ },
+ {
+  "code": "CNY",
+  "name": "Central New York",
+  "states": "NY",
+  "west": "Northern terminus of the Link Trail, west of Tuscarora Lake",
+  "east": "Oneida–Herkimer county line",
+  "miles": 87.14,
+  "url": "https://northcountrytrail.org/trail/new-york/cny/",
+  "affiliate": false
+ },
+ {
+  "code": "ADK",
+  "name": "Adirondack Mountain Club",
+  "states": "NY (0.01 VT)",
+  "west": "Hamlet of Forestport, Oneida County (gateway to Adirondack Park)",
+  "east": "Hamlet of Crown Point, Lake Champlain",
+  "miles": 186.29,
+  "url": "https://apps.cio.ny.gov/apps/mediacontact/public/view.cfm?parm=392274CA-5056-9D0B-1A195E78FDC6B94B&backButton",
+  "affiliate": true
+ },
+ {
+  "code": "GMC",
+  "name": "Green Mountain Club",
+  "states": "VT",
+  "west": "Appalachian Trail junction, Green Mountain National Forest (eastern terminus of the NCT)",
+  "east": "Middlebury Gap (Long Trail; boundary with MALT inferred, see gaps)",
+  "miles": 37.44,
+  "url": "https://en.wikipedia.org/wiki/North_Country_Trail_by_state",
+  "affiliate": true
+ },
+ {
+  "code": "MALT",
+  "name": "Middlebury Area Land Trust",
+  "states": "VT",
+  "west": "Middlebury Gap (boundary with GMC inferred, see gaps)",
+  "east": "Lake Champlain bridge at Crown Point (via Trail Around Middlebury + roads)",
+  "miles": 20.41,
+  "url": "https://www.onxmaps.com/backcountry/trails/hiking/us/vermont/north-country-trail-vermont-section-j064kp2e7z15",
+  "affiliate": true
+ },
+ {
+  "code": "Unassigned",
+  "name": "Unassigned",
+  "states": "ND, MN, WI, MI, OH, PA, NY, VT",
+  "west": "No chapter assigned in the NCTA source data",
+  "east": "No chapter assigned in the NCTA source data",
+  "miles": 152.76,
+  "url": null,
+  "affiliate": false,
+  "note": "Miles carrying no chapter code in the NCTA ArcGIS source (literal 'None' 130.92 mi + null field 21.84 mi); mostly North Dakota (126.78 mi)."
+ }
+]

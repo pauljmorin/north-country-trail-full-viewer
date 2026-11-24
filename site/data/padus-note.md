@@ -59,10 +59,16 @@ PAD-US 4.1 (March 2025), DOI `10.5066/P96WBCHS`.
 
 ```js
 // Raster overlay, good for the corridor overview (server renders it):
+// NOTE (2026-11-23, verified in-browser): pass f: 'image'. The default
+// f: 'json' round-trip returns a rendered-PNG href on the server's
+// arcgisoutput host (igskrd911spmpa2.cr.usgs.gov), which does not answer
+// from this environment, so the image errors and nothing draws. Direct
+// image export loads the PNG straight from the MapServer and renders.
 L.esri.dynamicMapLayer({
   url: 'https://edits.nationalmap.gov/arcgis/rest/services/PAD-US/PAD_US_gaz_combined/MapServer',
   layers: [0],
-  opacity: 0.45
+  opacity: 0.45,
+  f: 'image'
 }).addTo(map);
 // Clickable vector with attributes, for identify/popups (heavier — enable
 // at higher zooms or on demand):

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About this map — North Country Trail full trail viewer</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+    color: #2b2b26;
+    background: #f7f5ee;
+    margin: 0;
+    padding: 0;
+  }
+  .page { max-width: 720px; margin: 0 auto; padding: 28px 20px 60px; }
+  a { color: #2f5233; }
+  h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 4px; color: #2f5233; }
+  .subtitle { font-size: 1rem; color: #5c6657; margin: 0 0 20px; }
+  .back { display: inline-block; margin-bottom: 18px; font-size: 0.95rem; }
+  h2 {
+    font-size: 1.15rem; color: #2f5233;
+    border-bottom: 1px solid #b9cba5;
+    padding-bottom: 4px; margin: 30px 0 10px;
+  }
+  h3 { font-size: 1rem; margin: 18px 0 4px; color: #2b2b26; }
+  p { margin: 4px 0 10px; }
+  .src { font-size: 0.88rem; color: #5c6657; margin: 0 0 12px; }
+  .src a { color: #5c6657; word-break: break-all; }
+  .note {
+    background: #fff; border: 1px solid #b9cba5; border-radius: 6px;
+    padding: 10px 14px; margin: 16px 0;
+  }
+  .note p { margin: 4px 0; }
+  ul { margin: 4px 0 10px; padding-left: 22px; }
+  li { margin: 3px 0; }
+  .foot { margin-top: 36px; font-size: 0.88rem; color: #5c6657; border-top: 1px solid #b9cba5; padding-top: 12px; }
+</style>
+</head>
+<body>
+<div class="page">
+<a class="back" href="index.html">&larr; Back to the map</a>
+<h1>About this map</h1>
+<p class="subtitle">North Country Trail &mdash; full trail viewer, North Dakota to Vermont</p>
+
+<h2>What this map is for</h2>
+<p>This map draws the whole North Country National Scenic Trail, from its western terminus at Lake Sakakawea State Park in North Dakota to its eastern terminus at Lake Champlain in Vermont, in one view. It is built the way a chapter trail map is built &mdash; the trail line first, then the layers that help you read the ground around it &mdash; extended to the full trail. Use the chapter list to jump to one chapter&rsquo;s section: click a chapter to highlight its miles and zoom to them.</p>
+
+<h2>How it is built</h2>
+<p>The map is a plain website &mdash; pages, a map, and data files in open formats &mdash; so it can be kept going without any special software. The trail itself comes from the North Country Trail Association&rsquo;s own published map service, the official depiction of the route, pulled November 21, 2026. The map draws that route in three styles: solid green for natural tread (built off-road trail), solid amber for urban sidewalk, and dashed red for road. The urban-sidewalk split is derived from the source data by a documented rule, not published by NCTA: a mile counts as urban sidewalk if NCTA itself tags the segment <code>trail_type = &lsquo;Sidewalk&rsquo;</code> (28.90 miles trail-wide), or if an on-road mile falls inside a Census 2020 Urban Area or a Census 2024 incorporated place. Everything else on-road counts as road. The three styles are three different claims about the ground, and only the first comes straight from NCTA&rsquo;s data as tread.</p>
+<p>Chapter extents &mdash; which chapter looks after which stretch &mdash; come from the NCTA&rsquo;s chapter pages and the affiliate organisations&rsquo; own pages, read November 23&ndash;24, 2026. Per-chapter mileage is the sum of the source data&rsquo;s miles field for the features tagged with that chapter&rsquo;s code, from the same November 21, 2026 pull.</p>
+<p>The map is hosted on GitHub Pages, and its data lives in the same place, in files anyone can read.</p>
+
+<div class="note">
+<p><strong>A note on freshness.</strong> The layers on this map are snapshots, pulled on the dates given. A centerline pull is a record of its date, not a live feed &mdash; the pull date on each layer is the freshness signal. No one at NCTA or the National Park Service was contacted for this viewer; everything here comes from public sources already on disk or cited on this page.</p>
+</div>
+
+<h2>What the chapter numbers do and do not say</h2>
+<p>Chapter mileage is attribution, not a survey. A few stretches carry no chapter code at all in the source data (152.76 miles, listed as Unassigned, mostly in North Dakota), and a few codes are variants or unidentified (2.46 miles tagged &ldquo;Central NY&rdquo;, a variant spelling of Central New York; 1.56 miles tagged GTR; 1.48 miles tagged LON on the New Rockford Canal). Where a variant is reasonably identified it is folded into its chapter&rsquo;s highlight and noted on the chapter&rsquo;s record; where it is not, it sits in Unassigned and is flagged, not hidden. One chapter is short in the data: Star of the North shows only 10.21 tagged miles though the chapter maintains about 27 &mdash; its remaining miles are probably tagged under other codes or Unassigned. The trail itself is continuous; it is the chapter tags that are incomplete.</p>
+<p>The NCTA publishes no per-chapter mileage &mdash; its chapter pages state endpoints only, and its 2025 Trail Progress Report gives state totals only. The state totals from the same pull agree with the NCTA&rsquo;s 2025 figures within a few miles per state (closest: Minnesota, +0.15 miles; largest gaps: Ohio +6.78, Michigan &minus;5.08), which the NCTA&rsquo;s own caveat covers: totals are estimates and change frequently.</p>
+
+<h2>What is here now</h2>
+<p>The shell, the base line, the chapters, and the basemaps were the first step. Since then every wave-1 layer has been wired in: NCTA trail alerts and reroutes, NBI bridges, NWI wetlands, BIA tribal lands, PAD-US public land (live service), chainage, chapter boundaries, road walk, NCTA camping and Places, mile markers, partner trails, OSM roads and bike routes, NCTA map sheets, and place search over 8,930 entries. The two biggest files — wetlands (174 MB) and OSM roads (109 MB) — are off by default and load only when switched on. What is still missing, honestly: soils (the NRCS service answered again on November 23, 2026 after an outage, but the national soils pull has not been run yet); mile-marker coverage in Minnesota east of mile 558.5, the Buckeye Trail portion of Ohio, and the Finger Lakes portion of New York (no half-mile index exists for those stretches); and NCTA map-sheet coverage in Ohio (13%), New York (40%) and Minnesota (67%) — the gaps are gaps in the published series, not in this pull. None of those gaps has been filled in by hand. Full references, interpretation methods, and the cross-checks between the two independent chainage walks are on the <a href="data-sources.html">Data sources</a> page.</p>
+
+<h2>Data sources</h2>
+<p>Trail centerline and chapter attribution: North Country Trail Association, on behalf of the National Park Service &mdash; <a href="https://services2.arcgis.com/UfGVyqUm4GHa2zrj/arcgis/rest/services/nct_public/FeatureServer">nct_public FeatureServer</a>, layer 2, &ldquo;North Country Trail &ndash; Public&rdquo;, pull of November 21, 2026. Chapter endpoints: the NCTA chapter pages (northcountrytrail.org) and the affiliate organisations&rsquo; own pages, read November 23&ndash;24, 2026; the full per-chapter table, with sources, is in the repository&rsquo;s <code>ncta-chapter-extents-2026-11-23.md</code>. Basemaps: OpenStreetMap and OpenTopoMap, USGS (The National Map), Esri, CyclOSM, MapTiler, Stadia Maps, Mapbox Outdoors (public token, as published in the Itasca Moraine chapter viewer), and Esri Wayback aerials. Every layer carries its references and its interpretation method — the exact rules used to turn raw data into the published classification — on the <a href="data-sources.html">Data sources</a> page, so that someone reading that page later can reproduce every classification from the references plus the stated rules.</p>
+
+<h2>Who is behind it</h2>
+<p>The map is built and maintained by Paul Morin, a volunteer with the Itasca Moraine Chapter of the North Country Trail Association. It is not an NCTA or National Park Service publication, and it carries no NCTA or NPS branding. The trail data is credited to the North Country Trail Association as its source, above.</p>
+
+<p class="foot">North Country Trail &mdash; full trail viewer. Built from NCTA&rsquo;s open centerline data (pull November 21, 2026).</p>
+</div>
+</body>
+</html>

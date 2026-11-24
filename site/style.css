@@ -1,210 +1,439 @@
-/* North Country Trail completeness viewer — style.css (v1).
- * Same simple palette as the Itasca Moraine viewer it borrows from:
- * deep green headings on a warm paper background. */
+/* North Country Trail — full trail viewer, shell (step 1, Nov 2026).
+   Adapted from the Itasca Moraine chapter viewer's style.css (v4):
+   same paper panel left / map fills the rest, same design tokens.
+   Minnesota-only and chapter-specific rules are left out. Plain CSS,
+   no build step. app.js carries matching constants (COLORS) at its
+   head — keep the two in step. */
+
+:root {
+  --paper: #f7f5ee;        /* panel background */
+  --paper-line: #c9c2ab;   /* panel borders */
+  --paper-hover: #f1eee1;  /* quiet hover / notice background */
+  --ink: #1c2a1e;          /* body text */
+  --ink-soft: #5a665c;     /* keys, captions */
+  --trail: #1a9850;        /* natural tread green */
+  --trail-deep: #14532d;   /* emphasis */
+  --urban: #e08214;        /* urban sidewalk amber */
+  --road: #d7301f;         /* road red */
+  --highlight: #b2182b;    /* selected chapter */
+  --header-tint: #eef3e6;  /* record-sheet header band */
+}
+
 * { box-sizing: border-box; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.55;
-  color: #2b2b26;
-  background: #f7f5ee;
+
+html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  color: var(--ink);
 }
-a { color: #2f5233; }
-code { font-size: 0.9em; }
 
-/* ---------------------------------------------------------- masthead */
-.masthead { background: #eef1e4; border-bottom: 1px solid #b9cba5; }
-.masthead-inner { max-width: 1100px; margin: 0 auto; padding: 22px 20px 18px; }
-h1 { font-size: 1.7rem; line-height: 1.2; margin: 0 0 4px; color: #2f5233; }
-.subtitle { font-size: 1rem; color: #5c6657; margin: 0 0 16px; max-width: 720px; }
+/* Unify the basemaps into the panel's warm register. Overlays live
+   in other panes, unaffected. */
+.leaflet-tile-pane { filter: saturate(0.82) sepia(0.06) brightness(1.01); }
 
-/* Three kinds of miles, side by side, never lumped. */
-.headline {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin: 0 0 10px;
+/* Leaflet chrome recoloured to the paper system. */
+.leaflet-bar a,
+.leaflet-control-layers {
+  background: var(--paper);
+  border-color: var(--paper-line);
 }
-.mile {
-  background: #fff;
-  border: 1px solid #b9cba5;
-  border-left-width: 6px;
-  border-radius: 6px;
-  padding: 10px 12px;
+.leaflet-bar { border-radius: 8px; overflow: hidden; }
+.leaflet-control-scale-line {
+  background: rgba(247, 245, 238, 0.88);
+  border-color: var(--paper-line);
+  font-size: 10px;
 }
-.mile.total { border-left-color: #2f5233; }
-.mile.natural { border-left-color: #2e7d32; }
-.mile.urban { border-left-color: #e67e22; }
-.mile.road { border-left-color: #c0392b; }
-.mile-num {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.15;
-  color: #2b2b26;
-  font-variant-numeric: tabular-nums;
-}
-.mile-unit { display: block; font-size: 0.88rem; color: #5c6657; }
-.headline-note { margin: 4px 0 6px; max-width: 900px; }
-.headline-src { font-size: 0.88rem; color: #5c6657; margin: 0; max-width: 900px; }
 
-/* --------------------------------------------------------------- map */
-#map {
-  height: 62vh;
-  min-height: 420px;
-  width: 100%;
-  background: #dfe5d8;
-  border-bottom: 1px solid #b9cba5;
-  z-index: 0;
+:focus-visible {
+  outline: 2px solid var(--trail);
+  outline-offset: 2px;
 }
-.status {
-  max-width: 1100px;
-  margin: 10px auto 0;
-  padding: 0 20px;
+
+/* ------------------------------------------------------------ panel */
+
+#panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 340px;
+  height: 100%;
+  overflow-y: auto;
+  background: var(--paper);
+  border-right: 1px solid var(--paper-line);
+  padding: 14px 16px 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+#panel h2 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  margin: 20px 0 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--paper-line);
+}
+#panel h2:first-of-type { margin-top: 14px; }
+
+.masthead {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--paper-line);
+}
+.masthead h1 {
+  font-size: 1.35rem;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--trail-deep);
+}
+.masthead-desc {
+  margin: 2px 0 0;
   font-size: 0.9rem;
-  color: #5c6657;
-}
-.status.warn {
-  color: #7a4a00;
-  background: #fdf3e0;
-  border: 1px solid #e8c87a;
-  border-radius: 6px;
-  padding: 8px 12px;
+  color: var(--ink-soft);
 }
 
-/* Copy link — SACRED (Itasca Moraine viewer): icon-only, upper-right.
-   Leaflet bar styling so it sits with the zoom control. */
-.copy-link-btn {
-  width: 34px;
-  height: 34px;
-  line-height: 34px;
-  font-size: 20px;
-  text-align: center;
+.panel-actions { display: flex; gap: 8px; }
+.copy-link-btn, .whole-trail-btn {
+  flex: 1;
+  padding: 7px 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--trail-deep);
+  background: var(--header-tint);
+  border: 1px solid var(--paper-line);
+  border-radius: 6px;
   cursor: pointer;
+}
+.copy-link-btn:hover, .whole-trail-btn:hover { background: #e2ecd4; }
+
+/* --------------------------------------------------------- chapters */
+
+.chapter-hint, .gaz-hint {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin: 4px 0 8px;
+}
+#chapter-list {
+  max-height: 320px;
+  overflow-y: auto;
+  border: 1px solid var(--paper-line);
+  border-radius: 6px;
   background: #fff;
-  color: #2b2b26;
+}
+.chapter-row {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 6px 10px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ece9db;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+.chapter-row:last-child { border-bottom: none; }
+.chapter-row:hover { background: var(--paper-hover); }
+.chapter-row.on {
+  background: var(--header-tint);
+  box-shadow: inset 3px 0 0 var(--highlight);
+  font-weight: 650;
+}
+.chapter-name { display: block; }
+.chapter-aff { color: var(--ink-soft); font-weight: 400; }
+.chapter-meta {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+/* --------------------------------------------------------- gazetteer */
+
+#gazetteer { position: relative; }
+#gaz-search {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 0.95rem;
+  border: 1px solid var(--paper-line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+}
+#gaz-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1200;
+  background: #fff;
+  border: 1px solid var(--paper-line);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  max-height: 260px;
+  overflow-y: auto;
+}
+#gaz-results:empty { display: none; }
+.gaz-result {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 6px 10px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ece9db;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+.gaz-result:last-child { border-bottom: none; }
+.gaz-result:hover { background: var(--paper-hover); }
+div.gaz-result { cursor: default; color: var(--ink-soft); }
+.gaz-name { display: block; }
+.gaz-meta {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+.gaz-more {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* --------------------------------------------------------- inspector */
+
+#inspector {
+  margin-top: 14px;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid var(--paper-line);
+  border-radius: 6px;
+}
+#inspector:empty { display: none; }
+#inspector h3 {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  color: var(--trail-deep);
+}
+#inspector p { margin: 4px 0; font-size: 0.92rem; }
+.inspector-empty {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin: 0;
+}
+.pop-note {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.clear-chapter {
+  padding: 5px 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--trail-deep);
+  background: var(--header-tint);
+  border: 1px solid var(--paper-line);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ----------------------------------------------------- layer toggles */
+
+.tog-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 30px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.92rem;
+}
+.tog-row:hover { background: var(--paper-hover); }
+.tog-row input { accent-color: var(--trail); margin: 0; }
+.tog-stub { color: var(--ink-soft); cursor: default; }
+.tog-stub:hover { background: none; }
+.tog-coming {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------- basemaps */
+
+#background-choices { display: flex; flex-direction: column; gap: 2px; }
+.bg-choice {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 6px 10px;
+  background: none;
   border: none;
   border-radius: 4px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  font-size: 0.92rem;
+  color: var(--ink);
 }
-.copy-link-btn:hover { background: #f4f4f4; }
+.bg-choice:hover { background: var(--paper-hover); }
+.bg-choice.on {
+  background: var(--header-tint);
+  font-weight: 650;
+  box-shadow: inset 0 0 0 1px #b9cba5;
+}
+.bg-choice.sub-choice { padding-left: 24px; }
+.bg-choice:disabled {
+  color: var(--ink-soft);
+  cursor: default;
+  font-style: italic;
+}
+.bg-choice:disabled:hover { background: none; }
+.wayback-field {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+.wayback-field select {
+  width: 100%;
+  margin-top: 4px;
+  padding: 6px 8px;
+  font-size: 0.92rem;
+  border: 1px solid var(--paper-line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--ink);
+}
 
-/* Legend (bottom-right on the map). */
-.map-legend {
-  background: rgba(255, 255, 255, 0.94);
-  border-radius: 4px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-  padding: 8px 10px;
-  font-size: 0.82rem;
-  line-height: 1.5;
-  max-width: 300px;
+/* ------------------------------------------------------------ status */
+
+.status {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin: 16px 0 0;
 }
-.map-legend h2 { font-size: 0.85rem; margin: 0 0 4px; color: #2f5233; }
-.lg-row { white-space: nowrap; }
-.lg-line {
-  display: inline-block;
-  width: 26px;
-  height: 0;
-  vertical-align: middle;
-  margin-right: 6px;
+.status.error { color: var(--road); font-weight: 600; }
+.panel-foot {
+  margin-top: 18px;
+  padding-top: 10px;
+  border-top: 1px solid var(--paper-line);
+  font-size: 0.88rem;
 }
-.lg-natural { border-top: 3px solid #2e7d32; }
-.lg-urban { border-top: 3px solid #e67e22; }
-.lg-road { border-top: 3px dashed #c0392b; }
-.lg-state { border-top: 1px dashed #555; }
-.lg-fill {
-  display: inline-block;
-  width: 26px;
+.panel-foot a { color: var(--trail-deep); }
+
+/* -------------------------------------------------------------- map */
+
+#map {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 340px;
+  background: #ddd;
+  z-index: 0;
+}
+body.base-white #map { background: #fff; }
+
+/* Legend corner card (ITM pattern): the card starts closed behind
+   one button, top right. */
+#corner-ui {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+#corner-buttons button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--paper-line);
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.corner-card {
+  width: 260px;
+  max-width: 78vw;
+  padding: 10px 14px 12px;
+  background: var(--paper);
+  border: 1px solid var(--paper-line);
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+.corner-card h2 {
+  font-size: 0.95rem;
+  margin: 0 0 6px;
+  color: var(--trail-deep);
+}
+.leg-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  margin: 5px 0;
+}
+.leg-line {
+  flex: 0 0 28px;
+  border-top: 3px solid;
+  border-top-style: solid;
+}
+.leg-dot {
+  flex: 0 0 10px;
+  width: 10px;
   height: 10px;
-  vertical-align: middle;
-  margin-right: 6px;
-  background: rgba(102, 187, 106, 0.4);
-  border: 1px solid #1b5e20;
+  border-radius: 50%;
+  margin: 0 9px;
+}
+.leg-fill {
+  flex: 0 0 28px;
+  height: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  opacity: 0.7;
+}
+.leg-note {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin: 8px 0 0;
 }
 
-/* Map popups. */
-.pop-table { border-collapse: collapse; margin: 6px 0; }
-.pop-table td { padding: 2px 10px 2px 0; font-variant-numeric: tabular-nums; }
-.pop-table td.num { text-align: right; }
-.pop-note { font-size: 0.82rem; color: #5c6657; margin: 6px 0 0; }
+/* Map popups wear the panel's paper. */
+.leaflet-popup-content-wrapper {
+  background: var(--paper);
+  border-radius: 8px;
+}
+.leaflet-popup-content { font-size: 0.92rem; line-height: 1.45; }
+.leaflet-popup-content h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  color: var(--trail-deep);
+}
+.leaflet-popup-content p { margin: 4px 0; }
 
-/* ------------------------------------------------------------ tables */
-.tables { max-width: 1100px; margin: 0 auto; padding: 18px 20px 40px; }
-.tables h2 {
-  font-size: 1.25rem; color: #2f5233;
-  border-bottom: 1px solid #b9cba5;
-  padding-bottom: 4px; margin: 28px 0 8px;
-}
-.tables h3 { font-size: 1.05rem; margin: 22px 0 6px; color: #2b2b26; }
-.tables p { max-width: 860px; }
-.table-wrap { overflow-x: auto; }
-table { border-collapse: collapse; background: #fff; width: 100%; }
-th, td {
-  border: 1px solid #c9cbb8;
-  padding: 6px 10px;
-  text-align: left;
-  font-variant-numeric: tabular-nums;
-}
-thead th { background: #eef1e4; color: #2f5233; }
-tfoot th, tfoot td { background: #eef1e4; font-weight: 700; }
-td.num, th.num { text-align: right; }
-tbody tr:nth-child(even) { background: #faf9f4; }
-.flag {
-  font-size: 0.8rem; color: #7a4a00;
-  background: #fdf3e0; border: 1px solid #e8c87a;
-  border-radius: 3px; padding: 0 4px; white-space: nowrap;
-}
-.flag-note { font-size: 0.92rem; color: #5c6657; }
+/* -------------------------------------------------------- narrow view */
 
-/* -------------------------------------------------------- doc pages */
-.page { max-width: 720px; margin: 0 auto; padding: 28px 20px 60px; }
-.page h1 { font-size: 1.6rem; }
-.page h2 {
-  font-size: 1.15rem; color: #2f5233;
-  border-bottom: 1px solid #b9cba5;
-  padding-bottom: 4px; margin: 30px 0 10px;
-}
-.page h3 { font-size: 1rem; margin: 18px 0 4px; }
-.page p { margin: 4px 0 10px; }
-.page ul, .page ol { margin: 4px 0 10px; padding-left: 22px; }
-.page li { margin: 3px 0; }
-.back { display: inline-block; margin-bottom: 18px; font-size: 0.95rem; }
-.src { font-size: 0.88rem; color: #5c6657; margin: 0 0 12px; }
-.src a { color: #5c6657; word-break: break-all; }
-.note {
-  background: #fff; border: 1px solid #b9cba5; border-radius: 6px;
-  padding: 10px 14px; margin: 16px 0;
-}
-.note p { margin: 4px 0; }
-.warn-box {
-  background: #fdf3e0; border: 1px solid #e8c87a; border-radius: 6px;
-  padding: 10px 14px; margin: 16px 0;
-}
-.warn-box p { margin: 4px 0; }
-.foot {
-  margin-top: 36px; font-size: 0.88rem; color: #5c6657;
-  border-top: 1px solid #b9cba5; padding-top: 12px;
-}
-.scenario-avoid { background: #fdf3e0; }
-.callout {
-  font-size: 1.05rem; background: #fff;
-  border-left: 4px solid #2f5233; border-radius: 0 6px 6px 0;
-  padding: 10px 14px; margin: 16px 0;
-}
-
-/* -------------------------------------------------------------- foot */
-.page-foot {
-  max-width: 1100px; margin: 0 auto; padding: 0 20px 40px;
-  font-size: 0.9rem; color: #5c6657;
-  border-top: 1px solid #b9cba5;
-}
-.page-foot p { margin: 10px 0; }
-
-/* --------------------------------------------------------- responsive */
-@media (max-width: 760px) {
-  .headline { grid-template-columns: repeat(2, 1fr); }
-  #map { height: 55vh; min-height: 340px; }
-  .lg-row { white-space: normal; }
-  h1 { font-size: 1.35rem; }
+@media (max-width: 720px) {
+  #panel {
+    position: static;
+    width: 100%;
+    height: auto;
+    max-height: 46vh;
+    border-right: none;
+    border-bottom: 1px solid var(--paper-line);
+  }
+  #map {
+    position: static;
+    left: 0;
+    height: 54vh;
+  }
+  #chapter-list { max-height: 180px; }
 }
