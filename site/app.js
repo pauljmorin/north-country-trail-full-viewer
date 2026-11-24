@@ -910,6 +910,20 @@ function sheetPopup(f) {
 
 /* Generic GeoJSON builder: one L.geoJSON with a style / point
    function and a popup function. */
+/* Merge one FeatureCollection, or an array of them (a layer split
+   across several files — wetlands and OSM roads, both over GitHub's
+   100 MB file cap), into a single FeatureCollection so the layer
+   draws exactly as it would from one file. */
+function mergeParts(gj) {
+  if (!gj) return gj;
+  if (!Array.isArray(gj)) return gj;
+  var features = [];
+  gj.forEach(function (part) {
+    if (part && part.features) features = features.concat(part.features);
+  });
+  return { type: "FeatureCollection", features: features };
+}
+
 function geojsonLayer(gj, opts) {
   return L.geoJSON(gj, {
     style: opts.style || undefined,
@@ -1124,11 +1138,14 @@ var LAYERS = [
   {
     id: "wetlands-nwi", label: "Wetlands (NWI) — trail routing",
     group: "Crossings & land", onByDefault: false,
-    title: "USFWS National Wetlands Inventory, classified GO / MAYBE / NO-GO — 352,865 polygons, 174 MB file. Loads only when switched on; may take a while. OFF by default.",
-    file: "data/nwi-wetlands.geojson",
+    title: "USFWS National Wetlands Inventory, classified GO / MAYBE / NO-GO — 352,865 polygons, split into 4 files (GitHub rejects files over 100 MB; the single 174 MB file is kept locally, gitignored). Loads only when switched on; may take a while. OFF by default.",
+    files: ["data/nwi-wetlands-mn.geojson",
+      "data/nwi-wetlands-nd-mi.geojson",
+      "data/nwi-wetlands-oh-ny.geojson",
+      "data/nwi-wetlands-wi-vt-pa.geojson"],
     swatch: { kind: "fill", color: "#dc2626" },
-    build: function (gj) {
-      return geojsonLayer(gj, { style: wetlandStyle, popup: wetlandPopup });
+    build: function (parts) {
+      return geojsonLayer(mergeParts(parts), { style: wetlandStyle, popup: wetlandPopup });
     },
   },
   {
@@ -1241,11 +1258,11 @@ var LAYERS = [
   {
     id: "osm-roads", label: "Roads (OSM)", group: "Other trails & roads",
     onByDefault: false,
-    title: "OSM road centerlines in the 2 mi corridor — 242,491 features, 109 MB file. Loads only when switched on; may take a while. OFF by default.",
-    file: "data/osm-roads.geojson",
+    title: "OSM road centerlines in the 2 mi corridor — 242,491 features, split into 2 files (GitHub rejects files over 100 MB; the single 109 MB file is kept locally, gitignored). Loads only when switched on; may take a while. OFF by default.",
+    files: ["data/osm-roads-west.geojson", "data/osm-roads-east.geojson"],
     swatch: { kind: "line", color: "#6b7280" },
-    build: function (gj) {
-      return geojsonLayer(gj, { style: osmRoadStyle, popup: osmRoadPopup });
+    build: function (parts) {
+      return geojsonLayer(mergeParts(parts), { style: osmRoadStyle, popup: osmRoadPopup });
     },
   },
   {

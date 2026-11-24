@@ -215,9 +215,17 @@ Per trail (pulled 2026-11-23):
   42.743819) is the southern terminus; last (−72.488248, 45.008651)
   the northern terminus at the Canadian border.
 
-## 2. OSM roads — `site/data/osm-roads.geojson`
+## 2. OSM roads — `site/data/osm-roads.geojson` (deployed as two chunks)
 
-242,491 features, 48,375.13 geodesic mi total (file 113 MB). Pulled
+242,491 features, 48,375.13 geodesic mi total (file 113 MB). **Split
+for deployment (Nov 24, 2026):** GitHub rejects files over 100 MB, so
+the single file is kept locally (gitignored) and deployed as two
+chunks by `scripts/split_oversized_layers.py`, split by centroid
+longitude at the median (−84.253) — `osm-roads-west.geojson` (121,332
+features, 52.3 MB), `osm-roads-east.geojson` (121,159, 51.9 MB).
+Chunk counts sum to 242,491, verified by the script. `site/app.js`
+fetches both and merges them (`mergeParts`) so the layer renders
+identically. Pulled
 2026-11-24 (Geofabrik extracts downloaded 2026-11-23/24; the pull ran
 in two parts — the first agent completed ND/MN/WI/MI/OH and was
 killed mid-extract on Pennsylvania, leaving a 0-byte

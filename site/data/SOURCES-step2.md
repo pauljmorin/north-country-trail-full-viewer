@@ -394,7 +394,16 @@ buffer around that line.
   `states.geojson` polygons — border waters). File:
   `site/data/nwi-wetlands.geojson`, **181,713,702 bytes** — large
   for a viewer file; the layer is OFF by default and LAZY, and the
-  shell should not load it eagerly.
+  shell should not load it eagerly. **Split for deployment (Nov 24,
+  2026):** GitHub rejects files over 100 MB, so the single file is
+  kept locally (gitignored) and deployed as four chunks by
+  `scripts/split_oversized_layers.py` — `nwi-wetlands-mn.geojson`
+  (107,313 features, 51.6 MB), `nwi-wetlands-nd-mi.geojson` (93,838,
+  43.8 MB), `nwi-wetlands-oh-ny.geojson` (79,087, 36.2 MB),
+  `nwi-wetlands-wi-vt-pa.geojson` (72,627, 33.2 MB; includes the 264
+  state-null border waters). Chunk counts sum to 352,865, verified
+  by the script. `site/app.js` fetches all four and merges them
+  (`mergeParts`) so the layer renders identically.
 - **Source:** USFWS National Wetlands Inventory, national service
   as republished on ArcGIS Online:
   `https://services.arcgis.com/P3ePLMYs2RVChkJx/ArcGIS/rest/services/USA_Wetlands/FeatureServer/0`
@@ -559,7 +568,8 @@ buffer around that line.
   numeric "large" threshold (above). (3) W5 300-ft and W10 ½-mile
   are route-level checks — they need an actual drawn route, not a
   layer. (4) Per-polygon vintage is not exposed by the service.
-- **Use here:** `site/data/nwi-wetlands.geojson`, layer
+- **Use here:** `site/data/nwi-wetlands.geojson` (single file, local
+  only — deployed as the four chunks above), layer
   "wetlands-nwi" ("Wetlands (NWI) — trail routing", OFF by default,
   LAZY). Style (as ITM): MAYBE amber fill (#f59e0b, 0.35) with a
   dashed edge, NO-GO solid red fill (#dc2626, 0.45); dissolved

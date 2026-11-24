@@ -2,9 +2,10 @@
 # working/ is 1.1 GB of pull/merge intermediates (bridges, nwi, parcels, tribal).
 working/
 __pycache__/
-# GitHub blocks files over 100 MB. These two layers exceed it and are
-# absent from the deployed site until hosted elsewhere or split:
-#   site/data/nwi-wetlands.geojson  (182 MB)
-#   site/data/osm-roads.geojson     (114 MB)
+# GitHub blocks files over 100 MB. The two single-file layers exceed it,
+# so they stay local (gitignored) as the source of truth and are deployed
+# as chunks split by scripts/split_oversized_layers.py (each <=90 MB):
+#   site/data/nwi-wetlands.geojson  (182 MB) -> nwi-wetlands-{mn,nd-mi,oh-ny,wi-vt-pa}.geojson
+#   site/data/osm-roads.geojson     (114 MB) -> osm-roads-{west,east}.geojson
 site/data/nwi-wetlands.geojson
 site/data/osm-roads.geojson
