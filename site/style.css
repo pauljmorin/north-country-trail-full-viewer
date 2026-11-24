@@ -58,7 +58,7 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 340px;
+  width: 319px;
   height: 100%;
   overflow-y: auto;
   background: var(--paper);
@@ -100,6 +100,11 @@ html, body {
   letter-spacing: 0.01em;
   line-height: 1.15;
   margin: 0;
+  /* ITM's two-line wrap: the 319px column leaves ~191px for the
+     words, and "North Country Trail" at 17px would fit on one
+     line — cap the title so it breaks after "Country", exactly
+     as "Itasca Moraine Chapter" breaks after "Moraine". */
+  max-width: 130px;
 }
 .masthead-desc {
   font-size: 10.5px;
@@ -128,83 +133,50 @@ html, body {
 }
 .present-btn:hover { background: var(--paper-hover); }
 
-.panel-actions { display: flex; gap: 8px; }
-.copy-link-btn, .whole-trail-btn {
-  flex: 1;
-  padding: 7px 10px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--trail-deep);
-  background: var(--header-tint);
-  border: 1px solid var(--paper-line);
+/* Map-corner actions (ITM idiom): small icon-only squares floating
+   top-right over the map, in the Present button's style — copy
+   link, print, whole trail. */
+#map-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  display: flex;
+  gap: 6px;
+}
+#map-actions button {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid #b9cba5;
   border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
-.copy-link-btn:hover, .whole-trail-btn:hover { background: #e2ecd4; }
+#map-actions button:hover { background: var(--paper-hover); }
+#map-actions button.copied { background: var(--header-tint); }
 
 /* --------------------------------------------------------- chapters */
 
-.chapter-hint {
-  font-size: 0.85rem;
-  color: var(--ink-soft);
-  margin: 4px 0 8px;
-}
-.gaz-hint {
-  font-size: 11.5px;
-  color: var(--ink-soft);
-  margin: 5px 2px 0;
-}
-/* Chapter dropdown (Nov 24, 2026 — ITM-look reshape): one
-   <select> over the chapter list, same field pattern as the
-   Wayback year aerial selector below. */
-.chapter-field {
-  display: block;
-  margin: 8px 0 0;
-  font-size: 0.88rem;
-  color: var(--ink-soft);
-}
-.chapter-field select {
+/* Chapter dropdown, alone (Nov 24, 2026 — ITM panel rebuild): the
+   chapter listbox is gone; the select is the only chapter picker,
+   no heading, no label, no hint. Same field pattern as the Wayback
+   year aerial selector. */
+#chapter-select {
   width: 100%;
-  margin-top: 4px;
+  margin: 2px 0 10px;
   padding: 6px 8px;
   font-size: 0.92rem;
   border: 1px solid var(--paper-line);
   border-radius: 6px;
   background: #fff;
   color: var(--ink);
-}
-#chapter-list {
-  max-height: 320px;
-  overflow-y: auto;
-  border: 1px solid var(--paper-line);
-  border-radius: 6px;
-  background: #fff;
-}
-.chapter-row {
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding: 6px 10px;
-  background: none;
-  border: none;
-  border-bottom: 1px solid #ece9db;
-  cursor: pointer;
-  font-size: 0.9rem;
-  color: var(--ink);
-}
-.chapter-row:last-child { border-bottom: none; }
-.chapter-row:hover { background: var(--paper-hover); }
-.chapter-row.on {
-  background: var(--header-tint);
-  box-shadow: inset 3px 0 0 var(--highlight);
-  font-weight: 650;
-}
-.chapter-name { display: block; }
-.chapter-aff { color: var(--ink-soft); font-weight: 400; }
-.chapter-meta {
-  display: block;
-  font-size: 0.8rem;
-  color: var(--ink-soft);
 }
 
 /* --------------------------------------------------------- gazetteer */
@@ -303,9 +275,10 @@ div.gaz-result { cursor: default; color: var(--ink-soft); }
 
 /* ----------------------------------------------------- layer toggles */
 
-/* Group headings (ITM pattern, Nov 24, 2026 reshape): small-caps
-   disclosure rows — clicking a heading collapses its group.
-   Groups start open. */
+/* Group headings (ITM pattern): small-caps disclosure rows —
+   clicking a heading collapses its group. Groups start
+   COLLAPSED (Nov 24, 2026 panel rebuild) — ITM shows only the
+   grey group rows, nothing inside, until one is opened. */
 .tog-group {
   display: flex;
   align-items: center;
@@ -389,19 +362,28 @@ div.gaz-result { cursor: default; color: var(--ink-soft); }
   color: var(--ink);
 }
 
-/* ------------------------------------------------------------ status */
-
+/* Error-only status line (Nov 24, 2026 panel rebuild): no status
+   line lives in the panel — app.js creates this element only when
+   a load actually fails. */
 .status {
   font-size: 0.85rem;
   color: var(--ink-soft);
   margin: 16px 0 0;
 }
 .status.error { color: var(--road); font-weight: 600; }
+
+/* Panel footer (ITM R7): a wrapping flex row of green links, no
+   separators — with three links it falls 2 + 1, the ITM 2×2
+   shape. */
 .panel-foot {
-  margin-top: 18px;
-  padding-top: 10px;
-  border-top: 1px solid var(--paper-line);
-  font-size: 0.88rem;
+  margin-top: 8px;
+  padding-top: 8px;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .panel-foot a { color: var(--trail-deep); }
 
@@ -434,22 +416,23 @@ body.presenting #map { left: 0; }
   top: 0;
   right: 0;
   bottom: 0;
-  left: 340px;
+  left: 319px;
   background: #ddd;
   z-index: 0;
 }
 body.base-white #map { background: #fff; }
 
-/* Legend corner card (ITM pattern): the card starts closed behind
-   one button, top right. */
+/* Legend corner card (ITM pattern): bottom-left over the map,
+   just above the scale control (bottom: 42px clears it); the
+   card starts closed behind one button. */
 #corner-ui {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  left: 10px;
+  bottom: 42px;
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 8px;
 }
 #corner-buttons button {
@@ -537,10 +520,9 @@ body.base-white #map { background: #fff; }
     left: 0;
     height: 54vh;
   }
-  #chapter-list { max-height: 180px; }
   /* Masthead compresses, never stacks (ITM pattern). */
   .masthead { padding-bottom: 6px; margin-bottom: 6px; gap: 10px; }
   .masthead-logo { height: 32px; max-width: 96px; }
-  #panel h1 { font-size: 15px; white-space: nowrap; }
+  #panel h1 { font-size: 15px; white-space: nowrap; max-width: none; }
   .masthead-desc { font-size: 10px; }
 }

@@ -22,54 +22,49 @@
       aria-label="Present — big screen">⛶</button>
   </div>
 
-  <div class="panel-actions">
-    <button type="button" id="copy-link-btn" class="copy-link-btn" title="Copy link to this view">Copy link</button>
-    <button type="button" id="whole-trail-btn" class="whole-trail-btn" title="Zoom to the whole trail">Whole trail</button>
-  </div>
+  <select id="chapter-select" aria-label="Jump to a chapter">
+    <option value="">Choose a chapter&hellip;</option>
+  </select>
 
-  <h2>Chapters</h2>
-  <label class="chapter-field">Jump to a chapter
-    <select id="chapter-select">
-      <option value="">Choose a chapter&hellip;</option>
-    </select>
-  </label>
-  <p class="chapter-hint">Click a chapter to highlight its miles and
-    zoom to them.</p>
-  <div id="chapter-list" role="listbox" aria-label="Chapters, west to east">
-    <!-- chapter rows injected by app.js -->
-  </div>
-
-  <h2>Find</h2>
   <div id="gazetteer">
     <input id="gaz-search" type="search" autocomplete="off"
       placeholder="Type a place, mile marker, or chapter&hellip;">
     <div id="gaz-results" role="listbox" aria-label="Place search results"></div>
   </div>
-  <p class="gaz-hint">8,930 places along the trail. Type at least two
-    characters.</p>
 
   <div id="inspector" tabindex="-1"><!-- chapter record injected by app.js --></div>
 
   <div id="layer-toggles"><!-- checkboxes injected by app.js --></div>
 
-  <h2 id="basemap-head">Basemap</h2>
-  <div id="background-choices"><!-- base choices injected by app.js --></div>
-  <label class="wayback-field">Aerial by year (Esri Wayback)
-    <select id="wayback-select">
-      <option value="">No year aerial</option>
-    </select>
-  </label>
-
-  <p id="load-status" class="status" role="status">Loading map data&hellip;</p>
+  <div class="tog-group" id="basemap-group" role="button"
+    aria-expanded="false" tabindex="0">&#9656; Basemap</div>
+  <div class="tog-group-body collapsed" id="basemap-body">
+    <div id="background-choices"><!-- base choices injected by app.js --></div>
+    <label class="wayback-field">Aerial by year (Esri Wayback)
+      <select id="wayback-select">
+        <option value="">No year aerial</option>
+      </select>
+    </label>
+  </div>
 
   <p class="panel-foot"><a href="about.html" target="_blank"
-    rel="noopener" id="about-link">About this map</a> &middot;
+    rel="noopener" id="about-link">About this map</a>
     <a href="data-sources.html" target="_blank"
-    rel="noopener" id="sources-link">Data sources</a> &middot;
+    rel="noopener" id="sources-link">Data sources</a>
     <a href="https://pauljmorin.github.io/itasca-moraine-trail-map/site/" target="_blank"
     rel="noopener" id="itasca-link">Itasca Moraine chapter map</a></p>
 </div>
 <div id="map">
+  <!-- Map-corner actions (ITM idiom: small icon-only squares, in the
+       Present button's style): copy link, print, whole trail. -->
+  <div id="map-actions">
+    <button type="button" id="copy-link-btn" title="Copy link to this view"
+      aria-label="Copy link to this view"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button type="button" id="print-btn" title="Print"
+      aria-label="Print"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9V2h12v7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="6" y="14" width="12" height="8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button type="button" id="whole-trail-btn" title="Zoom to the whole trail"
+      aria-label="Zoom to the whole trail"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </div>
   <!-- Legend lives behind this corner button, toggled by app.js;
        the card starts closed. -->
   <div id="corner-ui">

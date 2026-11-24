@@ -15,14 +15,15 @@
  *     the old viewer drew: natural tread (solid green), urban
  *     sidewalk (solid amber), road (dashed red)
  *   - chapters: a west-to-east list from data/chapter-extents.json;
- *     click a chapter to highlight its miles and zoom to them.
- *     A chapter <select> over the list (Nov 24, 2026) flies to a
- *     chapter the same way a row click does.
- *   - national basemaps only (no Minnesota-only bases)
- *   - copy link, legend
+ *     one compact <select> in the panel flies to a chapter (Nov 24,
+ *     2026 panel rebuild — the chapter listbox is gone).
+ *   - copy link, legend, print, whole trail as small icon buttons
+ *     over the map's top-right corner.
  *   - panel dressed to the Itasca Moraine chapter viewer's look
  *     (Nov 24, 2026): NCTA logo masthead, Present button, small-caps
- *     collapsible layer groups, one-line Find hint.
+ *     collapsible layer groups that start collapsed, a slim Find
+ *     input with no heading or hint, BASEMAP as one more collapsed
+ *     group. Panel 319px, no scrollbar at desktop size.
  *   - every wave-1 layer wired into the registry: alerts, reroutes,
  *     NBI bridges, NWI wetlands, BIA tribal lands, PAD-US (live),
  *     chainage, chapter boundaries, road walk, camping, NCTA Places,
@@ -320,12 +321,26 @@ function esc(v) {
     return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
   });
 }
+/* Status (Nov 24, 2026 panel rebuild): no status line lives in
+   the panel. Success is silent; only a real load failure creates
+   a status line, inserted just above the footer. */
 function setStatus(text, isErr) {
+  if (!isErr) return;
   var el = document.getElementById("load-status");
-  if (el) {
-    el.textContent = text;
-    el.classList.toggle("error", !!isErr);
+  if (!el) {
+    el = document.createElement("p");
+    el.id = "load-status";
+    el.className = "status";
+    el.setAttribute("role", "status");
+    var foot = document.querySelector(".panel-foot");
+    if (foot && foot.parentNode) foot.parentNode.insertBefore(el, foot);
+    else {
+      var panel = document.getElementById("panel");
+      if (panel) panel.appendChild(el);
+    }
   }
+  el.textContent = text;
+  el.classList.toggle("error", true);
 }
 function fetchJson(url) {
   return fetch(url).then(function (res) {
@@ -1380,42 +1395,22 @@ function featuresForChapter(code) {
   });
 }
 
+/* Chapter dropdown, alone (Nov 24, 2026 panel rebuild): the
+   chapter listbox is gone — the <select> is the only chapter
+   picker, populated west to east from the extents table. */
 function buildChapterList() {
-  var wrap = document.getElementById("chapter-list");
-  wrap.innerHTML = "";
-  /* The dropdown over the list carries the same chapters, west to
-     east, as one <select> — the Wayback year selector's pattern. */
   var sel = document.getElementById("chapter-select");
-  if (sel) {
-    sel.innerHTML = "";
-    var blank = document.createElement("option");
-    blank.value = "";
-    blank.textContent = "Choose a chapter…";
-    sel.appendChild(blank);
-  }
+  if (!sel) return;
+  sel.innerHTML = "";
+  var blank = document.createElement("option");
+  blank.value = "";
+  blank.textContent = "Choose a chapter…";
+  sel.appendChild(blank);
   chapterExtents.forEach(function (row) {
-    var btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "chapter-row";
-    btn.setAttribute("role", "option");
-    btn.setAttribute("data-code", row.code);
-    btn.setAttribute("aria-selected", "false");
-    btn.innerHTML =
-      "<span class='chapter-name'>" + esc(row.name) +
-        (row.affiliate ? " <span class='chapter-aff'>(affiliate)</span>" : "") +
-      "</span>" +
-      "<span class='chapter-meta'>" + esc(row.code) + " &middot; " +
-        esc(row.states) + " &middot; " +
-        Number(row.miles).toFixed(2) + " mi</span>";
-    btn.title = esc(row.west) + " — " + esc(row.east);
-    btn.addEventListener("click", function () { toggleChapter(row.code); });
-    wrap.appendChild(btn);
-    if (sel) {
-      var opt = document.createElement("option");
-      opt.value = row.code;
-      opt.textContent = row.name + " (" + row.code + ")";
-      sel.appendChild(opt);
-    }
+    var opt = document.createElement("option");
+    opt.value = row.code;
+    opt.textContent = row.name + " (" + row.code + ")";
+    sel.appendChild(opt);
   });
 }
 
@@ -1430,10 +1425,6 @@ function buildChapterList() {
   });
 })();
 
-function toggleChapter(code) {
-  if (selectedChapter === code) clearChapter();
-  else selectChapter(code, false);
-}
 function selectChapter(code, fromHash) {
   var row = null;
   chapterExtents.forEach(function (r) { if (r.code === code) row = r; });
@@ -1471,22 +1462,17 @@ function clearHighlight() {
     highlightLayer = null;
   }
 }
+/* Keep the dropdown in step with selections and clears. */
 function markChapterRow(code) {
-  document.querySelectorAll("#chapter-list .chapter-row")
-    .forEach(function (row) {
-      var on = row.getAttribute("data-code") === code;
-      row.classList.toggle("on", on);
-      row.setAttribute("aria-selected", on ? "true" : "false");
-    });
-  /* Keep the dropdown in step with row clicks and clears. */
   var sel = document.getElementById("chapter-select");
   if (sel) sel.value = code || "";
 }
 function showChapterRecord(row, featureCount) {
   var el = document.getElementById("inspector");
   if (!row) {
-    el.innerHTML = "<p class='inspector-empty'>Select a chapter above " +
-      "to see its section of the trail.</p>";
+    /* No chapter selected: the inspector stays empty (and hidden
+       by :empty) — no permanent placeholder box in the panel. */
+    el.innerHTML = "";
     return;
   }
   var extra = "";
@@ -1560,16 +1546,17 @@ function buildLayerToggles() {
   });
   groups.forEach(function (group) {
     /* ITM pattern: the group heading is a small-caps disclosure
-       row; clicking it (or Enter/Space on it) collapses the
-       group. Groups start open — nothing is hidden by default. */
+       row; clicking it (or Enter/Space on it) opens or closes the
+       group. Groups start COLLAPSED (Nov 24, 2026 panel rebuild)
+       — the panel shows only the grey group rows, as ITM does. */
     var h = document.createElement("div");
     h.className = "tog-group";
     h.setAttribute("role", "button");
-    h.setAttribute("aria-expanded", "true");
+    h.setAttribute("aria-expanded", "false");
     h.tabIndex = 0;
-    h.textContent = "▾ " + group;
+    h.textContent = "▸ " + group;
     var body = document.createElement("div");
-    body.className = "tog-group-body";
+    body.className = "tog-group-body collapsed";
     h.addEventListener("click", function () { toggleLayerGroup(h, body); });
     h.addEventListener("keydown", function (e) {
       if (e.key === "Enter" || e.key === " ") {
@@ -1608,7 +1595,7 @@ function buildLayerToggles() {
           ensureLayer(def, true).then(function () { writeShareHash(); });
         } else if (def.layer) {
           map.removeLayer(def.layer);
-          /* The chapter list lives in the panel, not on the map —
+          /* The chapter select lives in the panel, not on the map —
              switching Chapters off also clears any selection. */
           if (def.id === "chapters") clearChapter();
           writeShareHash();
@@ -1624,6 +1611,23 @@ function toggleLayerGroup(h, body) {
     h.textContent.replace(/^[▸▾] /, "");
   h.setAttribute("aria-expanded", collapsed ? "false" : "true");
 }
+
+/* Basemap group (Nov 24, 2026 panel rebuild): the BASEMAP row in
+   the panel is a static .tog-group like the layer groups above,
+   with the base buttons + Wayback selector inside its body. It
+   starts collapsed, exactly like the layer groups. */
+(function wireBasemapGroup() {
+  var h = document.getElementById("basemap-group");
+  var body = document.getElementById("basemap-body");
+  if (!h || !body) return;
+  h.addEventListener("click", function () { toggleLayerGroup(h, body); });
+  h.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleLayerGroup(h, body);
+    }
+  });
+})();
 
 /* ------------------------------------------------------------ legend
    Legend rows are generated from the same style constants as the map
@@ -1767,15 +1771,26 @@ var requestedChapter = null;
 })();
 
 (function wirePanelButtons() {
+  /* Map-corner icon buttons (Nov 24, 2026 panel rebuild): the
+     buttons are icon-only, so copy feedback swaps the icon for a
+     check instead of replacing the label text. */
   var copyLinkBtn = document.getElementById("copy-link-btn");
+  var copyIcon = copyLinkBtn.innerHTML;
   copyLinkBtn.addEventListener("click", function () {
     writeShareHash();
     var url = location.href;
     function done(ok) {
-      copyLinkBtn.textContent = ok ? "Copied" :
-        "Copy failed — copy the address bar";
+      if (ok) {
+        copyLinkBtn.textContent = "✓";
+        copyLinkBtn.classList.add("copied");
+        copyLinkBtn.title = "Copied!";
+      } else {
+        copyLinkBtn.title = "Copy failed — copy the address bar";
+      }
       window.setTimeout(function () {
-        copyLinkBtn.textContent = "Copy link";
+        copyLinkBtn.innerHTML = copyIcon;
+        copyLinkBtn.classList.remove("copied");
+        copyLinkBtn.title = "Copy link to this view";
       }, 2000);
     }
     function fallbackCopy(text) {
@@ -1797,6 +1812,10 @@ var requestedChapter = null;
     } else {
       fallbackCopy(url);
     }
+  });
+  var printBtn = document.getElementById("print-btn");
+  if (printBtn) printBtn.addEventListener("click", function () {
+    window.print();
   });
   var wholeBtn = document.getElementById("whole-trail-btn");
   wholeBtn.addEventListener("click", function () {
@@ -1843,9 +1862,9 @@ ensureLayer(baseDef, true).then(function () {
     return Promise.all(jobs);
   }
 }).then(function () {
-  setStatus(bootErrors.length ?
-    "Map loaded with errors: " + bootErrors.join("; ") :
-    "Base line and chapters loaded.");
+  /* Boot complete: success is silent (no status line in the
+     panel — see setStatus); failures already reported via
+     setStatus above. */
   writeShareHash();
 }).catch(function (err) {
   setStatus("Could not load the base line — " + err.message, true);
