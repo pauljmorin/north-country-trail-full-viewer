@@ -539,9 +539,20 @@ function tribalPopup(f) {
 }
 
 /* ---- Parcels (county records, Option A — statewide services) ---- */
-/* ITM model: crossed parcels 2px solid orange outline, adjoining
-   parcels 2px dashed khaki. Faint below corridor zoom, full style at
-   corridor zoom and above. The NCT viewer has no zoom bands (ITM's
+/* ITM model: crossed parcels solid outline, adjoining parcels dashed.
+   ONE color everywhere (Paul, Nov 25, 2026): deep cyan outline
+   #0891b2, bright cyan wash #22d3ee — the old crossed-orange
+   (#b35806 / #fdbb84) and adjoining-khaki (#a89a5b / #e7e1c3)
+   vanished on summer satellite (orange on brown/green) and on
+   color-infrared (orange on red vegetation), and the khaki was
+   nearly invisible on light paper. Cyan is rare in natural
+   imagery, so it reads on light paper, dark LiDAR hillshade,
+   summer satellite and CIR red alike (complementary to red).
+   Crossed vs adjoining is now dash-only — solid = the trail
+   crosses the parcel, dashed "3 3" = adjoining ring — same
+   color, same fill. Same color in the ITM viewer and the Leech
+   Lake viewer. Faint below corridor zoom, full style at corridor
+   zoom and above. The NCT viewer has no zoom bands (ITM's
    currentBand), so the threshold is a plain zoom: full style at
    zoom 11+, faint below. The style function reads the zoom at render
    time; the zoomend listener near the share-hash code re-styles the
@@ -550,15 +561,15 @@ var PARCELS_FULL_ZOOM = 11;
 function parcelStyle(f) {
   var crossed = (f.properties || {}).corridor === "crossed";
   if (map.getZoom() < PARCELS_FULL_ZOOM) {
-    return { color: crossed ? "#b35806" : "#a89a5b", weight: 1,
-      opacity: crossed ? 0.5 : 0.35, dashArray: crossed ? null : "3 3",
-      fillColor: crossed ? "#fdbb84" : "#e7e1c3",
-      fillOpacity: crossed ? 0.12 : 0.05 };
+    return { color: "#0891b2", weight: 1,
+      opacity: 0.4, dashArray: crossed ? null : "3 3",
+      fillColor: "#22d3ee",
+      fillOpacity: 0.05 };
   }
-  return { color: crossed ? "#b35806" : "#a89a5b", weight: 2,
+  return { color: "#0891b2", weight: 2,
     dashArray: crossed ? null : "3 3",
-    fillColor: crossed ? "#fdbb84" : "#e7e1c3",
-    fillOpacity: crossed ? 0.32 : 0.12 };
+    fillColor: "#22d3ee",
+    fillOpacity: 0.10 };
 }
 /* Minnesota assessor class-code labels — copied verbatim from
    the Itasca Moraine chapter viewer (St. Louis County's
@@ -1171,7 +1182,7 @@ var LAYERS = [
     onByDefault: false,
     title: "County parcels the trail crosses, plus the adjoining ring — 141,687 parcels, 3,031.45 trail miles (63.7%). Six statewide services (ND, MN, WI, VT, NY, OH); Michigan, NY's 5 opt-out counties and Pennsylvania mostly blank. OFF by default; loads only when switched on — 98 MB file, may take a while.",
     file: "data/parcels.geojson",
-    swatch: { kind: "fill", color: "#b35806" },
+    swatch: { kind: "fill", color: "#22d3ee", border: "#0891b2" },
     build: function (gj) {
       return geojsonLayer(gj, { style: parcelStyle, popup: parcelPopup,
         renderer: canvasRenderer });
