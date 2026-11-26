@@ -865,9 +865,51 @@ function partnerPopup(f) {
     (p.source_url ? "<p>Source: <a href='" + esc(p.source_url) +
       "' target='_blank' rel='noopener'>" + esc(p.source || "source") + "</a></p>" :
       (p.source ? "<p>Source: " + esc(p.source) + "</p>" : "")) +
+    (p.trail === "Superior Hiking Trail" ?
+      "<p>Full line: see the \u201cSuperior Hiking Trail (full line)\u201d layer " +
+      "\u2014 this DNR park file is only the state-park portions (207.58 mi).</p>" : "") +
     srcLine("Partner-trail geometry is kept whole where it overlaps " +
       "the NCT — the overlap is flagged here, never deleted. The 50 m " +
       "tolerance is the ITM viewer's overlap rule.");
+}
+
+/* ---- Superior Hiking Trail, full line (Lake County service) ---- */
+/* MAIN is the trail line; SPUR/CAMP are secondary (thinner, dashed);
+   the 3 segments the service leaves untyped (OBJECTIDs 574-576) are
+   drawn dashed grey so the map does not assert a type the source
+   does not state. Mileage shown is the service's own MILES — SHT
+   mileage, never NCTA mileage; no chainage is derived from this line. */
+function shtFullStyle(f) {
+  var t = (f.properties || {}).sht_type;
+  if (t === "SPUR") {
+    return { color: "#0e7490", weight: 2, opacity: 0.75, dashArray: "6 4" };
+  }
+  if (t === "CAMP") {
+    return { color: "#0e7490", weight: 2, opacity: 0.75, dashArray: "2 4" };
+  }
+  if (t !== "MAIN") {
+    return { color: "#64748b", weight: 2, opacity: 0.75, dashArray: "6 4" };
+  }
+  return { color: "#0e7490", weight: 3, opacity: 0.9 };
+}
+function shtFullPopup(f) {
+  var p = f.properties || {};
+  var typeLabel = p.sht_type === "MAIN" ? "Main trail" :
+    p.sht_type === "SPUR" ? "Spur" :
+    p.sht_type === "CAMP" ? "Camp connector" :
+    "Untyped in source";
+  return "<h3>Superior Hiking Trail</h3>" +
+    "<p><strong>" + esc(typeLabel) + "</strong> &middot; " +
+    fmtMi(p.miles) + " (service miles)" +
+    (p.length_mi !== undefined && p.length_mi !== null ?
+      " &middot; " + fmtMi(p.length_mi) + " geodesic" : "") + "</p>" +
+    (p.collector ? "<p>Collected by " + esc(p.collector) + "</p>" : "") +
+    "<p>Source: <a href='" + esc(p.source_url || "") +
+      "' target='_blank' rel='noopener'>Lake County MN ArcGIS Online</a></p>" +
+    srcLine("Full SHT line, Lake County's service — the NCT runs on " +
+      "the SHT from Duluth to Grand Portage. Mileage here is the " +
+      "Superior Hiking Trail Association's own, not NCTA mileage; " +
+      "no chainage is derived from this line. See Data sources.");
 }
 
 /* ---- OSM roads ---- */
@@ -1264,6 +1306,16 @@ var LAYERS = [
     swatch: { kind: "line", color: "#b91c1c" },
     build: function (gj) {
       return geojsonLayer(gj, { style: partnerStyle, popup: partnerPopup });
+    },
+  },
+  {
+    id: "sht-full", label: "Superior Hiking Trail (full line)",
+    group: "Other trails & roads", onByDefault: false,
+    title: "Superior Hiking Trail, full line — 576 segments, 330.0 mi (MAIN 291.1, SPUR 32.2, CAMP 2.7, untyped 4.0). Lake County's ArcGIS Online service, collected by Sundew Technical Services. Replaces the DNR state-park portions (207.58 mi) in the partner-trails layer as the fuller SHT source. The NCT runs on the SHT from Duluth to Grand Portage; SHT mileage is the trail's own, not NCTA mileage. See Data sources.",
+    file: "data/sht-full.geojson",
+    swatch: { kind: "line", color: "#0e7490" },
+    build: function (gj) {
+      return geojsonLayer(gj, { style: shtFullStyle, popup: shtFullPopup });
     },
   },
   {

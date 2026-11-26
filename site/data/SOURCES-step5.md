@@ -82,6 +82,20 @@ Per trail (pulled 2026-11-23):
   carries it. No better public GIS source was used: the SHT
   Association publishes maps, not a GIS download.
 
+**Superseded 2026-11-26 by the full line.** The DNR park file above
+is no longer the viewer's SHT source: the full line from Lake
+County's ArcGIS Online service (576 features, 330.0 mi — MAIN 291.1,
+SPUR 32.2, CAMP 2.7, untyped 4.0) is now its own layer,
+`site/data/sht-full.geojson`, wired by `scripts/pull-sht-full.py`
+and documented in `site/data/SOURCES-sht-full.md`. This DNR entry
+is kept here as the concurrency record only (188.34 mi within 50 m
+of the NCT, measured 2026-11-23). The full line's southern end sits
+101 m from the NCT centerline at Jay Cooke — closing the DNR file's
+~7.5 km southern gap — and its northern end 2 m from the centerline
+at the Pigeon River end. The full line's MAIN (291.1 mi) still sits
+~19 mi short of the published ~310 mi trail; that shortfall is an
+open gap, not explained by this pull.
+
 ### Border Route Trail — 46.07 mi (24 features)
 
 - Reference: USDA Forest Service National Forest System Trails

@@ -13,6 +13,7 @@ and to the page, and link it from the table below.
 | `site/data/SOURCES-step3.md` | Step 3 — derived layers: chainage (4,826 pts, 4,826.21 mi), chapter boundaries (88 pts), road walk (573 segs, 1,393.98 mi). Shared chain builder `scripts/chainlib.py`; full reconciliation (raw 4,871.07 − 9.68 duplicates − 35.18 leftovers). |
 | `site/data/SOURCES-step4.md` | Step 4 — NCTA points + gazetteer: camping (502), NCTA Places (2,044), mile markers (6,344; coverage gaps MN/OH/NY), gazetteer (8,930 entries; independent chain walk, 4,827.41 mi). |
 | `site/data/SOURCES-step5.md` | Step 5 — partner trails (687), OSM roads (242,491), OSM bike routes (132; Mesabi present), NCTA map sheets (523; coverage gaps OH 13% / NY 40% / MN 67%). |
+| `site/data/SOURCES-sht-full.md` | Superior Hiking Trail, full line (576 features, 330.0 mi) — Lake County ArcGIS Online service; replaces the DNR park file as the fuller SHT source in this viewer. SHT mileage is SHTA's own, never NCTA mileage; no chainage derived. |
 | `site/data/padus-note.md` + `site/data/padus-layer.json` | PAD-US: live-service wiring (combined raster + Manager Name vector), why no local pull, and the recipe for one later. |
 | `site/data-sources.html` | The readable data-sources page (linked from the shell footer). Built from the four step files + the plan + the wiring cross-checks. |
 
@@ -67,8 +68,9 @@ run when the layers were wired in"):
 Soils (not built); mile markers — MN east of mile 558.5 (~317 mi), OH
 Buckeye portion (~932 mi), NY Finger Lakes portion (~390 mi); NCTA map
 sheets — OH 13%, NY 40%, MN 67%; wetlands W2 overlay not applied, no
-numeric W4 "large" threshold; partner trails — SHT ~100 mi missing from
-the DNR park file, BRT 46.07 vs ~65 mi published, Driftless Weaver Road
-missing, Long Trail OSM 249.50 vs 272 mi published; PAD-US easements
-untagged; chapter mileage — 152.76 mi unassigned, Star of the North
-10.21 tagged miles vs ~27 maintained.
+numeric W4 "large" threshold; partner trails — SHT full line now wired
+as its own layer (SOURCES-sht-full.md; the DNR park file's ~100 mi gap
+is closed, MAIN still 291.1 mi vs ~310 published), BRT 46.07 vs ~65 mi
+published, Driftless Weaver Road missing, Long Trail OSM 249.50 vs 272
+mi published; PAD-US easements untagged; chapter mileage — 152.76 mi
+unassigned, Star of the North 10.21 tagged miles vs ~27 maintained.
